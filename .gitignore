@@ -1,0 +1,21 @@
+# Raw/private data
+data/
+
+# Archive folders
+archive*/
+archive_*/
+archive_model_candidates/
+archive_exploratory_models/
+archive_clean_restart_*/
+
+# Git/system cache
+.git/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# Local installed R libraries, not needed in GitHub
+R_libs/
+logs/*archive*.log

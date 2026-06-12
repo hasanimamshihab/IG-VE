@@ -1,0 +1,30 @@
+XIG-CVAE v3: Literature-guided cross-modal GFV imputation model
+
+Goal:
+Predict MRI-imputed GFV128 from MFV128 using paired GE+MRI subjects.
+
+Reason for v3:
+Baseline CVAE reconstructed GFV moderately when GFV was available to the encoder, but MFV-only generation was weak.
+The learned-prior CVAE did not improve sufficiently. Therefore, v3 makes the actual inference path, MFV -> GFV, the primary supervised objective.
+
+Core design:
+1. MFV encoder: MFV128 -> z_m
+2. GFV encoder: GFV128 -> z_g
+3. GFV decoder/generator: z_m + MFV128 -> GFV_hat
+4. GFV reconstruction path: z_g + MFV128 -> GFV_recon
+5. Latent alignment: z_m should match z_g for paired subjects
+6. Contrastive alignment: matched MFV-GFV pairs are pulled together; unmatched pairs are pushed apart
+7. Optional weak discriminator: generated GFV should resemble measured GFV distribution
+8. Weak AD/CN auxiliary regularization only; diagnosis is not used as decoder input
+
+Primary model selection:
+Validation MFV-to-GFV imputation R2.
+
+Secondary metrics:
+Validation/Test MSE, subject-wise Pearson r, feature-wise Pearson r, and auxiliary AD/CN performance.
+
+Output folder:
+outputs/xigcvae_crossmodal/
+
+Important reproducibility rule:
+This v3 model does not overwrite baseline XIG-CVAE or learned-prior XIG-CVAE outputs.

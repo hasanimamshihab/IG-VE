@@ -1,0 +1,22 @@
+{
+  "model": "Final GE branch",
+  "seed": 42,
+  "input_panel": "Top 2000 limma-ranked probes",
+  "actual_probes_used": 2000,
+  "approximate_unique_gene_symbols": 1538,
+  "gfv_dimension": 128,
+  "dropout": 0.6,
+  "batch_size": 16,
+  "max_epochs": 300,
+  "early_stopping_patience": 30,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.005,
+  "label_smoothing": 0.05,
+  "split": "MRI-branch canonical split for paired subjects; GE-only subjects assigned to Train",
+  "split_source": "/N/project/SingleCell_Image/Ronak/Project_folder/manifests/mri_branch_final_split_seed_42.csv",
+  "best_epoch": 71,
+  "subjects_total": 302,
+  "train_n": 215,
+  "validation_n": 43,
+  "test_n": 44
+}

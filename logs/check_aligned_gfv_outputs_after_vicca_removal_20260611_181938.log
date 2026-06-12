@@ -1,0 +1,15 @@
+========== CHECK ALIGNED GFV OUTPUTS ==========
+Project root: /N/project/SingleCell_Image/Ronak/Project_folder
+
+Measured AGFV shape: (302, 136)
+Paired MRI AGFV shape: (289, 135)
+MRI-only AGFV shape: (1206, 139)
+Combined AGFV shape: (1508, 139)
+AGFV columns: 128
+
+Passed checks: 47
+Failed checks: 0
+
+STATUS: PASS
+Summary saved to: /N/project/SingleCell_Image/Ronak/Project_folder/outputs/aligned_gfv/check_aligned_gfv_outputs_summary.txt
+===============================================

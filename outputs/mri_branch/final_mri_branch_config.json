@@ -1,0 +1,20 @@
+{
+  "model": "Final MRI branch",
+  "input": "3D structural MRI",
+  "output": "MFV128",
+  "seed": 42,
+  "mri_subjects_total": 1495,
+  "paired_ge_mri_subjects": 289,
+  "mri_only_subjects": 1206,
+  "mfv_dimension": 128,
+  "batch_size": 4,
+  "max_epochs": 300,
+  "early_stopping_patience": 30,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "dropout": 0.3,
+  "label_smoothing": 0.05,
+  "split": "70/15/15 stratified by MRI cohort and diagnosis",
+  "best_epoch": 56,
+  "normalization": "Per-image robust normalization using nonzero voxels; clip p1-p99; z-score; background=0; resized to 64x64x64"
+}

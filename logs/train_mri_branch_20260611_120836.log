@@ -1,0 +1,31 @@
+========== TRAIN MRI BRANCH ==========
+Project root: /N/project/SingleCell_Image/Ronak/Project_folder
+Device: cuda
+GPU: Tesla V100-PCIE-32GB
+======================================
+
+========== MRI BRANCH INPUT ==========
+Total MRI subjects: 1,495
+diagnosis       AD   CN
+mri_cohort             
+MRI_only       546  660
+Paired_GE_MRI   85  204
+
+Split counts:
+diagnosis    AD   CN
+split               
+Test         95  130
+Train       441  605
+Validation   95  129
+
+Split counts by MRI cohort:
+diagnosis                  AD   CN
+split      mri_cohort             
+Test       MRI_only        82   99
+           Paired_GE_MRI   13   31
+Train      MRI_only       382  462
+           Paired_GE_MRI   59  143
+Validation MRI_only        82   99
+           Paired_GE_MRI   13   30
+======================================
+

@@ -1,0 +1,125 @@
+========== TRAIN MRI-ALIGNED GFV MODEL ==========
+Project root: /N/project/SingleCell_Image/Ronak/Project_folder
+Paired table: /N/project/SingleCell_Image/Ronak/Project_folder/outputs/xigcvae/paired_gfv128_mfv128_289_subjects.csv
+Real GFV 302 file: /N/project/SingleCell_Image/Ronak/Project_folder/outputs/gene_branch/real_gfv_features_302_subjects.csv
+MRI-only MFV file: /N/project/SingleCell_Image/Ronak/Project_folder/outputs/mri_branch/mfv_features_mri_only_1206_subjects.csv
+Device: cuda
+GPU: Tesla V100-PCIE-32GB
+=================================================
+
+Paired table shape: (289, 261)
+Real GFV 302 shape: (302, 135)
+MRI-only MFV shape: (1206, 138)
+
+Paired split counts:
+split
+Train         202
+Test           44
+Validation     43
+Name: count, dtype: int64
+
+Paired split x diagnosis:
+diagnosis   AD   CN
+split              
+Test        13   31
+Train       59  143
+Validation  13   30
+
+
+==================================================
+Training config: {'name': 'agfv_h256_align050_contrast010', 'hidden_dim': 256, 'dropout': 0.2, 'cls_g_weight': 1.0, 'cls_m_weight': 1.0, 'align_weight': 0.5, 'contrast_weight': 0.1, 'corr_weight': 0.1, 'ge_recon_weight': 0.1, 'mri_to_gfv_weight': 0.02}
+==================================================
+agfv_h256_align050_contrast010 | Epoch 001 | train MRI AUC 0.992 | val MRI AUC 0.905 | val MRI bacc 0.801 | val align cosine 0.155 | score 1.757
+agfv_h256_align050_contrast010 | Epoch 010 | train MRI AUC 0.999 | val MRI AUC 0.862 | val MRI bacc 0.779 | val align cosine 0.619 | score 1.960
+agfv_h256_align050_contrast010 | Epoch 020 | train MRI AUC 1.000 | val MRI AUC 0.885 | val MRI bacc 0.779 | val align cosine 0.634 | score 1.995
+agfv_h256_align050_contrast010 | Epoch 030 | train MRI AUC 1.000 | val MRI AUC 0.897 | val MRI bacc 0.779 | val align cosine 0.617 | score 2.000
+agfv_h256_align050_contrast010 | Epoch 040 | train MRI AUC 1.000 | val MRI AUC 0.903 | val MRI bacc 0.779 | val align cosine 0.601 | score 1.997
+agfv_h256_align050_contrast010 | Epoch 050 | train MRI AUC 1.000 | val MRI AUC 0.892 | val MRI bacc 0.779 | val align cosine 0.588 | score 1.977
+agfv_h256_align050_contrast010 | Epoch 060 | train MRI AUC 1.000 | val MRI AUC 0.915 | val MRI bacc 0.774 | val align cosine 0.580 | score 1.993
+agfv_h256_align050_contrast010 | Epoch 070 | train MRI AUC 1.000 | val MRI AUC 0.908 | val MRI bacc 0.774 | val align cosine 0.576 | score 1.981
+agfv_h256_align050_contrast010 | Epoch 080 | train MRI AUC 1.000 | val MRI AUC 0.915 | val MRI bacc 0.758 | val align cosine 0.563 | score 1.963
+agfv_h256_align050_contrast010 | Epoch 090 | train MRI AUC 1.000 | val MRI AUC 0.913 | val MRI bacc 0.758 | val align cosine 0.567 | score 1.963
+agfv_h256_align050_contrast010 | Epoch 100 | train MRI AUC 1.000 | val MRI AUC 0.910 | val MRI bacc 0.774 | val align cosine 0.554 | score 1.971
+agfv_h256_align050_contrast010 early stopping at epoch 102. Best epoch: 22
+
+==================================================
+Training config: {'name': 'agfv_h256_align100_contrast010', 'hidden_dim': 256, 'dropout': 0.2, 'cls_g_weight': 1.0, 'cls_m_weight': 1.0, 'align_weight': 1.0, 'contrast_weight': 0.1, 'corr_weight': 0.1, 'ge_recon_weight': 0.1, 'mri_to_gfv_weight': 0.02}
+==================================================
+agfv_h256_align100_contrast010 | Epoch 001 | train MRI AUC 0.992 | val MRI AUC 0.908 | val MRI bacc 0.801 | val align cosine 0.159 | score 1.763
+agfv_h256_align100_contrast010 | Epoch 010 | train MRI AUC 0.999 | val MRI AUC 0.862 | val MRI bacc 0.779 | val align cosine 0.622 | score 1.962
+agfv_h256_align100_contrast010 | Epoch 020 | train MRI AUC 0.999 | val MRI AUC 0.890 | val MRI bacc 0.779 | val align cosine 0.636 | score 2.003
+agfv_h256_align100_contrast010 | Epoch 030 | train MRI AUC 1.000 | val MRI AUC 0.895 | val MRI bacc 0.779 | val align cosine 0.619 | score 1.998
+agfv_h256_align100_contrast010 | Epoch 040 | train MRI AUC 1.000 | val MRI AUC 0.908 | val MRI bacc 0.779 | val align cosine 0.603 | score 2.004
+agfv_h256_align100_contrast010 | Epoch 050 | train MRI AUC 1.000 | val MRI AUC 0.900 | val MRI bacc 0.779 | val align cosine 0.587 | score 1.985
+agfv_h256_align100_contrast010 | Epoch 060 | train MRI AUC 1.000 | val MRI AUC 0.915 | val MRI bacc 0.758 | val align cosine 0.580 | score 1.973
+agfv_h256_align100_contrast010 | Epoch 070 | train MRI AUC 1.000 | val MRI AUC 0.913 | val MRI bacc 0.758 | val align cosine 0.574 | score 1.967
+agfv_h256_align100_contrast010 | Epoch 080 | train MRI AUC 1.000 | val MRI AUC 0.910 | val MRI bacc 0.779 | val align cosine 0.565 | score 1.984
+agfv_h256_align100_contrast010 | Epoch 090 | train MRI AUC 1.000 | val MRI AUC 0.910 | val MRI bacc 0.779 | val align cosine 0.564 | score 1.983
+agfv_h256_align100_contrast010 | Epoch 100 | train MRI AUC 1.000 | val MRI AUC 0.910 | val MRI bacc 0.758 | val align cosine 0.548 | score 1.948
+agfv_h256_align100_contrast010 early stopping at epoch 102. Best epoch: 22
+
+==================================================
+Training config: {'name': 'agfv_h128_align100_contrast020', 'hidden_dim': 128, 'dropout': 0.2, 'cls_g_weight': 1.0, 'cls_m_weight': 1.0, 'align_weight': 1.0, 'contrast_weight': 0.2, 'corr_weight': 0.1, 'ge_recon_weight': 0.1, 'mri_to_gfv_weight': 0.02}
+==================================================
+agfv_h128_align100_contrast020 | Epoch 001 | train MRI AUC 0.988 | val MRI AUC 0.903 | val MRI bacc 0.801 | val align cosine 0.090 | score 1.716
+agfv_h128_align100_contrast020 | Epoch 010 | train MRI AUC 0.998 | val MRI AUC 0.905 | val MRI bacc 0.818 | val align cosine 0.549 | score 2.012
+agfv_h128_align100_contrast020 | Epoch 020 | train MRI AUC 0.999 | val MRI AUC 0.915 | val MRI bacc 0.818 | val align cosine 0.610 | score 2.060
+agfv_h128_align100_contrast020 | Epoch 030 | train MRI AUC 0.999 | val MRI AUC 0.887 | val MRI bacc 0.818 | val align cosine 0.623 | score 2.036
+agfv_h128_align100_contrast020 | Epoch 040 | train MRI AUC 1.000 | val MRI AUC 0.877 | val MRI bacc 0.818 | val align cosine 0.624 | score 2.025
+agfv_h128_align100_contrast020 | Epoch 050 | train MRI AUC 1.000 | val MRI AUC 0.913 | val MRI bacc 0.779 | val align cosine 0.620 | score 2.020
+agfv_h128_align100_contrast020 | Epoch 060 | train MRI AUC 1.000 | val MRI AUC 0.908 | val MRI bacc 0.779 | val align cosine 0.608 | score 2.006
+agfv_h128_align100_contrast020 | Epoch 070 | train MRI AUC 1.000 | val MRI AUC 0.903 | val MRI bacc 0.779 | val align cosine 0.598 | score 1.994
+agfv_h128_align100_contrast020 | Epoch 080 | train MRI AUC 1.000 | val MRI AUC 0.900 | val MRI bacc 0.779 | val align cosine 0.596 | score 1.990
+agfv_h128_align100_contrast020 | Epoch 090 | train MRI AUC 1.000 | val MRI AUC 0.905 | val MRI bacc 0.779 | val align cosine 0.593 | score 1.993
+agfv_h128_align100_contrast020 | Epoch 100 | train MRI AUC 1.000 | val MRI AUC 0.910 | val MRI bacc 0.779 | val align cosine 0.577 | score 1.990
+agfv_h128_align100_contrast020 early stopping at epoch 100. Best epoch: 20
+
+==================================================
+Training config: {'name': 'agfv_h256_align100_no_mritogfv', 'hidden_dim': 256, 'dropout': 0.2, 'cls_g_weight': 1.0, 'cls_m_weight': 1.0, 'align_weight': 1.0, 'contrast_weight': 0.1, 'corr_weight': 0.1, 'ge_recon_weight': 0.1, 'mri_to_gfv_weight': 0.0}
+==================================================
+agfv_h256_align100_no_mritogfv | Epoch 001 | train MRI AUC 0.992 | val MRI AUC 0.908 | val MRI bacc 0.801 | val align cosine 0.157 | score 1.762
+agfv_h256_align100_no_mritogfv | Epoch 010 | train MRI AUC 0.999 | val MRI AUC 0.862 | val MRI bacc 0.779 | val align cosine 0.624 | score 1.963
+agfv_h256_align100_no_mritogfv | Epoch 020 | train MRI AUC 1.000 | val MRI AUC 0.890 | val MRI bacc 0.779 | val align cosine 0.636 | score 2.003
+agfv_h256_align100_no_mritogfv | Epoch 030 | train MRI AUC 1.000 | val MRI AUC 0.900 | val MRI bacc 0.779 | val align cosine 0.626 | score 2.008
+agfv_h256_align100_no_mritogfv | Epoch 040 | train MRI AUC 1.000 | val MRI AUC 0.905 | val MRI bacc 0.779 | val align cosine 0.621 | score 2.011
+agfv_h256_align100_no_mritogfv | Epoch 050 | train MRI AUC 1.000 | val MRI AUC 0.897 | val MRI bacc 0.818 | val align cosine 0.605 | score 2.037
+agfv_h256_align100_no_mritogfv | Epoch 060 | train MRI AUC 1.000 | val MRI AUC 0.913 | val MRI bacc 0.758 | val align cosine 0.609 | score 1.988
+agfv_h256_align100_no_mritogfv | Epoch 070 | train MRI AUC 1.000 | val MRI AUC 0.913 | val MRI bacc 0.758 | val align cosine 0.603 | score 1.983
+agfv_h256_align100_no_mritogfv | Epoch 080 | train MRI AUC 1.000 | val MRI AUC 0.908 | val MRI bacc 0.779 | val align cosine 0.587 | score 1.993
+agfv_h256_align100_no_mritogfv | Epoch 090 | train MRI AUC 1.000 | val MRI AUC 0.910 | val MRI bacc 0.779 | val align cosine 0.586 | score 1.996
+agfv_h256_align100_no_mritogfv | Epoch 100 | train MRI AUC 1.000 | val MRI AUC 0.915 | val MRI bacc 0.774 | val align cosine 0.574 | score 1.988
+agfv_h256_align100_no_mritogfv early stopping at epoch 102. Best epoch: 22
+
+========== BEST MRI-ALIGNED GFV MODEL ==========
+Best config: {'name': 'agfv_h256_align100_no_mritogfv', 'hidden_dim': 256, 'dropout': 0.2, 'cls_g_weight': 1.0, 'cls_m_weight': 1.0, 'align_weight': 1.0, 'contrast_weight': 0.1, 'corr_weight': 0.1, 'ge_recon_weight': 0.1, 'mri_to_gfv_weight': 0.0}
+Best epoch: 22
+Selection score: 2.061449214395577
+Validation MRI AUC: 0.905128205128205
+Validation MRI balanced accuracy: 0.8179487179487179
+Validation alignment cosine: 0.6309000849723816
+Test MRI AUC: 0.9156327543424317
+Test MRI balanced accuracy: 0.913151364764268
+Test alignment cosine: 0.7715925574302673
+===============================================
+
+========== FINAL MRI-ALIGNED GFV BEST MODEL METRICS ==========
+                               Model                         Config      Split  Subjects, n  Best epoch  MRI-derived AGFV AUC  MRI-derived AGFV balanced accuracy  MRI-derived AGFV accuracy  MRI-derived AGFV AD sensitivity  MRI-derived AGFV CN specificity  MRI-derived AGFV F1  GE-derived AGFV AUC  GE-derived AGFV balanced accuracy  MRI-GE alignment cosine mean  MRI-GE alignment cosine median  MRI-GE alignment subject-wise r  MRI-GE alignment feature-wise r  MRI-GE alignment MSE  TN  FP  FN  TP
+MRI-aligned molecular representation agfv_h256_align100_no_mritogfv      Train          202          22              0.999407                            0.993007                   0.990099                         1.000000                         0.986014             0.983333             1.000000                           1.000000                      0.919054                        0.931126                         0.920285                         0.706410              0.173978 141   2   0  59
+MRI-aligned molecular representation agfv_h256_align100_no_mritogfv Validation           43          22              0.905128                            0.817949                   0.837209                         0.769231                         0.866667             0.740741             0.982051                           0.894872                      0.630900                        0.879191                         0.633229                         0.313541              0.526713  26   4   3  10
+MRI-aligned molecular representation agfv_h256_align100_no_mritogfv       Test           44          22              0.915633                            0.913151                   0.909091                         0.923077                         0.903226             0.857143             0.962779                           0.913151                      0.771593                        0.908573                         0.772982                         0.520477              0.357044  28   3   1  12
+==============================================================
+
+Saved:
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/aligned_gfv/final_aligned_gfv_model.pt
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/aligned_gfv/final_aligned_gfv_scalers.pkl
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/aligned_gfv/final_aligned_gfv_config.json
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/aligned_gfv/final_aligned_gfv_metrics.csv
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/aligned_gfv/aligned_gfv_all_config_metrics.csv
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/aligned_gfv/aligned_gfv_training_history.csv
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/aligned_gfv/aligned_gfv_measured_ge_302_subjects.csv
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/aligned_gfv/aligned_gfv_paired_mri_289_subjects.csv
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/aligned_gfv/aligned_gfv_mri_only_1206_subjects.csv
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/aligned_gfv/aligned_gfv_combined_1508_subjects.csv
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/tables/supplementary/Table_S15_Aligned_GFV_model_metrics.xlsx
+
+STATUS: DONE

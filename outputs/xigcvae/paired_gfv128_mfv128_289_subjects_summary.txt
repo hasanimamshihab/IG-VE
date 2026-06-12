@@ -1,0 +1,29 @@
+Paired XIG-CVAE input table summary
+==================================
+
+Input GFV file: /N/project/SingleCell_Image/Ronak/Project_folder/outputs/gene_branch/real_gfv_features_302_subjects.csv
+Input MFV file: /N/project/SingleCell_Image/Ronak/Project_folder/outputs/mri_branch/mfv_features_paired_289_subjects.csv
+Output table: /N/project/SingleCell_Image/Ronak/Project_folder/outputs/xigcvae/paired_gfv128_mfv128_289_subjects.csv
+
+Rows: 289
+GFV dimension: 128
+MFV dimension: 128
+Total feature dimension: 256
+
+Split counts:
+split
+Train         202
+Test           44
+Validation     43
+
+Diagnosis counts:
+diagnosis
+CN    204
+AD     85
+
+Split x diagnosis:
+diagnosis   AD   CN
+split              
+Test        13   31
+Train       59  143
+Validation  13   30

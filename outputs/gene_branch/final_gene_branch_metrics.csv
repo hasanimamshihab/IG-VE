@@ -1,0 +1,4 @@
+Model,Input representation,Actual probes used,Approximate unique gene symbols,GFV dimension,Split,"Subjects, n",Best epoch,Accuracy,Balanced accuracy,AUC,Precision,Recall / AD sensitivity,CN specificity,F1 score,TN,FP,FN,TP
+Final GE branch,Top 2000 limma-ranked probes -> GFV128,2000,1538,128,Train,215,71,1.0,1.0,1.0,1.0,1.0,1.0,1.0,151,0,0,64
+Final GE branch,Top 2000 limma-ranked probes -> GFV128,2000,1538,128,Validation,43,71,0.8837209302325582,0.8948717948717949,0.9717948717948719,0.75,0.9230769230769231,0.8666666666666667,0.8275862068965517,26,4,1,12
+Final GE branch,Top 2000 limma-ranked probes -> GFV128,2000,1538,128,Test,44,71,0.9090909090909091,0.913151364764268,0.9578163771712158,0.8,0.9230769230769231,0.9032258064516129,0.8571428571428571,28,3,1,12

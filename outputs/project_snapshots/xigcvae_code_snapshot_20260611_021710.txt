@@ -1,0 +1,2580 @@
+============================================================
+XIG-CVAE / IG-CVAE PROJECT CODE SNAPSHOT
+Generated on: Thu Jun 11 02:17:10 EDT 2026
+Project root: /N/project/SingleCell_Image/Ronak/Project_folder
+============================================================
+
+============================================================
+1. PROJECT TREE
+============================================================
+src/xigcvae/ablation/__init__.py
+src/xigcvae/data/__init__.py
+src/xigcvae/data/__pycache__/__init__.cpython-311.pyc
+src/xigcvae/data/__pycache__/validate_clean_data.cpython-311.pyc
+src/xigcvae/data/validate_clean_data.py
+src/xigcvae/deg/__init__.py
+src/xigcvae/deg/__pycache__/__init__.cpython-311.pyc
+src/xigcvae/deg/__pycache__/run_deg_analysis.cpython-311.pyc
+src/xigcvae/deg/run_deg_analysis.py
+src/xigcvae/deg/run_limma_deg.R
+src/xigcvae/evaluation/__init__.py
+src/xigcvae/figures/__init__.py
+src/xigcvae/__init__.py
+src/xigcvae/models/gene_branch.py
+src/xigcvae/models/__init__.py
+src/xigcvae/models/__pycache__/gene_branch.cpython-311.pyc
+src/xigcvae/models/__pycache__/__init__.cpython-311.pyc
+src/xigcvae/__pycache__/__init__.cpython-311.pyc
+src/xigcvae/tables/__init__.py
+src/xigcvae/training/__init__.py
+src/xigcvae/training/__pycache__/__init__.cpython-311.pyc
+src/xigcvae/training/__pycache__/run_gene_panel_sensitivity.cpython-311.pyc
+src/xigcvae/training/__pycache__/train_final_gene_branch.cpython-311.pyc
+src/xigcvae/training/run_gene_panel_sensitivity.py
+src/xigcvae/training/train_final_gene_branch.py
+src/xigcvae/utils/excel_style.py
+src/xigcvae/utils/__init__.py
+src/xigcvae/utils/__pycache__/excel_style.cpython-311.pyc
+src/xigcvae/utils/__pycache__/__init__.cpython-311.pyc
+
+============================================================
+2. DATA FILES
+============================================================
+total 213M
+-rw-rw-r--+ 1 mshihab condo_SingleCell_Image 212M Jun  8 14:12 gene_expression_data.csv
+-rw-rw----+ 1 mshihab condo_SingleCell_Image 362K Jun 10 23:48 mri_only_metadata.csv
+drwxrws---+ 2 mshihab condo_SingleCell_Image  84K Jun 10 23:48 only_MRI
+-rw-rw----+ 1 mshihab condo_SingleCell_Image 104K Jun 10 23:52 Paired_data_metadata.csv
+drwxrws---+ 2 mshihab condo_SingleCell_Image  20K Jun 10 23:48 paired_MRI
+
+paired_MRI count:
+289
+only_MRI count:
+1206
+
+============================================================
+3. OUTPUT FILES CREATED SO FAR
+============================================================
+outputs/DEG/deg_design_matrix.csv
+outputs/DEG/deg_results_all_genes.csv
+outputs/DEG/deg_sample_metadata.csv
+outputs/DEG/limma_input_expression_matrix.csv
+outputs/DEG/limma_input_feature_info.csv
+outputs/DEG/limma_input_sample_metadata.csv
+outputs/DEG/top_464_gene_panel.csv
+outputs/gene_branch/final_selected_gene_panel_top_1000.csv
+outputs/gene_branch/gene_panel_sensitivity_metrics.csv
+outputs/gene_branch/gene_panel_sensitivity_summary.csv
+outputs/gene_branch/selected_gene_panel_from_sensitivity.csv
+outputs/gene_branch/sensitivity_models/gene_branch_All_nominal_P_0_05_seed_1001.pt
+outputs/gene_branch/sensitivity_models/gene_branch_All_nominal_P_0_05_seed_2024.pt
+outputs/gene_branch/sensitivity_models/gene_branch_All_nominal_P_0_05_seed_2026.pt
+outputs/gene_branch/sensitivity_models/gene_branch_All_nominal_P_0_05_seed_42.pt
+outputs/gene_branch/sensitivity_models/gene_branch_All_nominal_P_0_05_seed_777.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_1000_seed_1001.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_1000_seed_2024.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_1000_seed_2026.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_1000_seed_42.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_1000_seed_777.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_100_seed_1001.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_100_seed_2024.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_100_seed_2026.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_100_seed_42.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_100_seed_777.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_2000_seed_1001.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_2000_seed_2024.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_2000_seed_2026.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_2000_seed_42.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_2000_seed_777.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_250_seed_1001.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_250_seed_2024.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_250_seed_2026.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_250_seed_42.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_250_seed_777.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_500_seed_1001.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_500_seed_2024.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_500_seed_2026.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_500_seed_42.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_500_seed_777.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_50_seed_1001.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_50_seed_2024.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_50_seed_2026.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_50_seed_42.pt
+outputs/gene_branch/sensitivity_models/gene_branch_Top_50_seed_777.pt
+outputs/project_snapshots/xigcvae_code_snapshot_20260611_021710.txt
+outputs/tables/main/Table_1_Characteristics_of_study_sample.xlsx
+outputs/tables/supplementary/Table_S1_Data_dictionary.xlsx
+outputs/tables/supplementary/Table_S2_Cohort_and_modality_availability.xlsx
+outputs/tables/supplementary/Table_S3_DEG_results.xlsx
+outputs/tables/supplementary/Table_S4_Gene_panel_sensitivity.xlsx
+
+============================================================
+4. MANIFEST FILES
+============================================================
+manifests/gene_panel_sensitivity_split_seed_1001.csv
+manifests/gene_panel_sensitivity_split_seed_2024.csv
+manifests/gene_panel_sensitivity_split_seed_2026.csv
+manifests/gene_panel_sensitivity_split_seed_42.csv
+manifests/gene_panel_sensitivity_split_seed_777.csv
+
+============================================================
+5. SOURCE CODE FILES
+============================================================
+
+############################################################
+FILE: src/xigcvae/data/validate_clean_data.py
+############################################################
+"""
+Validate cleaned ADNI data and create initial manuscript-ready tables.
+
+Outputs:
+1. outputs/tables/main/Table_1_Characteristics_of_study_sample.xlsx
+2. outputs/tables/supplementary/Table_S1_Data_dictionary.xlsx
+3. outputs/tables/supplementary/Table_S2_Cohort_and_modality_availability.xlsx
+
+This script does not train any model.
+It validates the clean data and creates journal-style Excel tables.
+"""
+
+from pathlib import Path
+import numpy as np
+import pandas as pd
+from scipy import stats
+from openpyxl import load_workbook
+from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+from openpyxl.utils import get_column_letter
+
+
+ROOT = Path("/N/project/SingleCell_Image/Ronak/Project_folder")
+DATA_DIR = ROOT / "data"
+
+TABLE_MAIN_DIR = ROOT / "outputs" / "tables" / "main"
+TABLE_SUPP_DIR = ROOT / "outputs" / "tables" / "supplementary"
+
+TABLE_MAIN_DIR.mkdir(parents=True, exist_ok=True)
+TABLE_SUPP_DIR.mkdir(parents=True, exist_ok=True)
+
+TABLE1_PATH = TABLE_MAIN_DIR / "Table_1_Characteristics_of_study_sample.xlsx"
+TABLE_S1_PATH = TABLE_SUPP_DIR / "Table_S1_Data_dictionary.xlsx"
+TABLE_S2_PATH = TABLE_SUPP_DIR / "Table_S2_Cohort_and_modality_availability.xlsx"
+
+OLD_SIMPLE_TABLE1 = TABLE_MAIN_DIR / "Table_1_Cohort_and_modality_availability.xlsx"
+
+
+def bool_series(series: pd.Series) -> pd.Series:
+    """Convert mixed boolean/string columns to boolean."""
+    if series.dtype == bool:
+        return series
+    return series.astype(str).str.lower().isin(["true", "1", "yes"])
+
+
+def fmt_mean_sd(series: pd.Series) -> str:
+    x = pd.to_numeric(series, errors="coerce").dropna()
+    if len(x) == 0:
+        return "NA"
+    return f"{x.mean():.2f} ± {x.std(ddof=1):.2f}"
+
+
+def fmt_category_counts(series: pd.Series) -> str:
+    s = series.dropna()
+    if len(s) == 0:
+        return "NA"
+
+    try:
+        vals = sorted(s.unique(), key=lambda x: float(x))
+    except Exception:
+        vals = sorted(s.unique())
+
+    total = len(s)
+    lines = []
+    for val in vals:
+        count = int((s == val).sum())
+        pct = 100 * count / total
+        lines.append(f"{val}: {pct:.2f}% ({count})")
+    return "\n".join(lines)
+
+
+def fmt_true_count(series: pd.Series) -> str:
+    s = bool_series(series)
+    total = len(s)
+    if total == 0:
+        return "NA"
+    count = int(s.sum())
+    pct = 100 * count / total
+    return f"{count} ({pct:.2f}%)"
+
+
+def p_continuous(df: pd.DataFrame, col: str) -> str:
+    ad = pd.to_numeric(df.loc[df["diagnosis"] == "AD", col], errors="coerce").dropna()
+    cn = pd.to_numeric(df.loc[df["diagnosis"] == "CN", col], errors="coerce").dropna()
+    if len(ad) < 2 or len(cn) < 2:
+        return "NA"
+    _, p = stats.ttest_ind(ad, cn, equal_var=False)
+    return f"{p:.2E}"
+
+
+def p_categorical(df: pd.DataFrame, col: str) -> str:
+    sub = df.loc[df["diagnosis"].isin(["AD", "CN"]), ["diagnosis", col]].dropna()
+    if sub.empty:
+        return "NA"
+
+    table = pd.crosstab(sub["diagnosis"], sub[col])
+    if table.shape[0] < 2 or table.shape[1] < 2:
+        return "NA"
+
+    _, p, _, _ = stats.chi2_contingency(table)
+    return f"{p:.2E}"
+
+
+def add_demographic_section(rows, section_title: str, df: pd.DataFrame, include_modality_rows: bool = False) -> None:
+    """Add one journal-style cohort section to Table 1."""
+    df = df[df["diagnosis"].isin(["AD", "CN"])].copy()
+
+    ad = df[df["diagnosis"] == "AD"]
+    cn = df[df["diagnosis"] == "CN"]
+
+    rows.append({
+        "Characteristic": section_title,
+        "AD": "",
+        "CN": "",
+        "Total": "",
+        "P-value": "",
+        "_row_type": "section",
+    })
+
+    rows.append({
+        "Characteristic": "",
+        "AD": f"N={len(ad)}",
+        "CN": f"N={len(cn)}",
+        "Total": f"N={len(df)}",
+        "P-value": "",
+        "_row_type": "nrow",
+    })
+
+    if "age" in df.columns and df["age"].notna().sum() > 0:
+        rows.append({
+            "Characteristic": "Age, mean ± SD",
+            "AD": fmt_mean_sd(ad["age"]),
+            "CN": fmt_mean_sd(cn["age"]),
+            "Total": fmt_mean_sd(df["age"]),
+            "P-value": p_continuous(df, "age"),
+            "_row_type": "normal",
+        })
+
+    if "sex" in df.columns and df["sex"].notna().sum() > 0:
+        rows.append({
+            "Characteristic": "Sex",
+            "AD": fmt_category_counts(ad["sex"]),
+            "CN": fmt_category_counts(cn["sex"]),
+            "Total": fmt_category_counts(df["sex"]),
+            "P-value": p_categorical(df, "sex"),
+            "_row_type": "normal",
+        })
+
+    if "apoe4_allele_count" in df.columns and df["apoe4_allele_count"].notna().sum() > 0:
+        rows.append({
+            "Characteristic": "APOE4 allele count",
+            "AD": fmt_category_counts(ad["apoe4_allele_count"]),
+            "CN": fmt_category_counts(cn["apoe4_allele_count"]),
+            "Total": fmt_category_counts(df["apoe4_allele_count"]),
+            "P-value": p_categorical(df, "apoe4_allele_count"),
+            "_row_type": "normal",
+        })
+
+    if include_modality_rows:
+        if "has_measured_ge" in df.columns:
+            rows.append({
+                "Characteristic": "Measured gene expression available",
+                "AD": fmt_true_count(ad["has_measured_ge"]),
+                "CN": fmt_true_count(cn["has_measured_ge"]),
+                "Total": fmt_true_count(df["has_measured_ge"]),
+                "P-value": p_categorical(df, "has_measured_ge"),
+                "_row_type": "normal",
+            })
+
+        if "has_mri" in df.columns:
+            rows.append({
+                "Characteristic": "MRI available",
+                "AD": fmt_true_count(ad["has_mri"]),
+                "CN": fmt_true_count(cn["has_mri"]),
+                "Total": fmt_true_count(df["has_mri"]),
+                "P-value": p_categorical(df, "has_mri"),
+                "_row_type": "normal",
+            })
+
+        if "has_mri_imputed_gfv" in df.columns:
+            rows.append({
+                "Characteristic": "MRI-imputed GFV available",
+                "AD": fmt_true_count(ad["has_mri_imputed_gfv"]),
+                "CN": fmt_true_count(cn["has_mri_imputed_gfv"]),
+                "Total": fmt_true_count(df["has_mri_imputed_gfv"]),
+                "P-value": p_categorical(df, "has_mri_imputed_gfv"),
+                "_row_type": "normal",
+            })
+
+
+def style_table1(path: Path) -> None:
+    wb = load_workbook(path)
+    ws = wb["Table 1"]
+
+    ws.insert_rows(1)
+    ws["A1"] = "Table 1. Characteristics of the study sample."
+    ws.merge_cells(start_row=1, start_column=1, end_row=1, end_column=5)
+
+    grey = PatternFill("solid", fgColor="D9D9D9")
+    dark_grey = PatternFill("solid", fgColor="BFBFBF")
+    white = PatternFill("solid", fgColor="FFFFFF")
+    thin_white = Side(style="thin", color="FFFFFF")
+    border = Border(left=thin_white, right=thin_white, top=thin_white, bottom=thin_white)
+
+    for row in ws.iter_rows():
+        for cell in row:
+            cell.font = Font(name="Times New Roman", size=11)
+            cell.alignment = Alignment(vertical="top", wrap_text=True)
+            cell.border = border
+            cell.fill = grey
+
+    ws["A1"].font = Font(name="Times New Roman", size=11, bold=True)
+    ws["A1"].fill = white
+    ws["A1"].alignment = Alignment(horizontal="left")
+
+    for cell in ws[2]:
+        cell.font = Font(name="Times New Roman", size=11, bold=True)
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        cell.fill = dark_grey
+
+    helper_col = 6
+    for r in range(3, ws.max_row + 1):
+        row_type = ws.cell(r, helper_col).value
+
+        if row_type == "section":
+            for c in range(1, 6):
+                ws.cell(r, c).font = Font(name="Times New Roman", size=11, bold=True)
+                ws.cell(r, c).fill = dark_grey
+
+        if row_type == "nrow":
+            for c in range(1, 6):
+                ws.cell(r, c).font = Font(name="Times New Roman", size=11, bold=True)
+                ws.cell(r, c).alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+
+    ws.delete_cols(helper_col)
+
+    widths = {
+        "A": 38,
+        "B": 30,
+        "C": 30,
+        "D": 30,
+        "E": 16,
+    }
+    for col, width in widths.items():
+        ws.column_dimensions[col].width = width
+
+    for r in range(1, ws.max_row + 1):
+        ws.row_dimensions[r].height = 30
+
+    ws.freeze_panes = "A3"
+    wb.save(path)
+
+
+def style_generic_excel(path: Path, sheet_name: str) -> None:
+    wb = load_workbook(path)
+    ws = wb[sheet_name]
+
+    header_fill = PatternFill("solid", fgColor="D9D9D9")
+    thin = Side(style="thin", color="D9D9D9")
+    border = Border(left=thin, right=thin, top=thin, bottom=thin)
+
+    for row in ws.iter_rows():
+        for cell in row:
+            cell.font = Font(name="Times New Roman", size=11)
+            cell.alignment = Alignment(vertical="top", wrap_text=True)
+            cell.border = border
+
+    for cell in ws[1]:
+        cell.font = Font(name="Times New Roman", size=11, bold=True)
+        cell.fill = header_fill
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+
+    for col_idx in range(1, ws.max_column + 1):
+        col_letter = get_column_letter(col_idx)
+        ws.column_dimensions[col_letter].width = 24
+
+    ws.freeze_panes = "A2"
+    wb.save(path)
+
+
+def create_table1(paired_meta: pd.DataFrame, mri_only_meta: pd.DataFrame) -> None:
+    measured_ge = paired_meta[
+        (paired_meta["ge_column_found"]) &
+        (paired_meta["diagnosis"].isin(["AD", "CN"]))
+    ].copy()
+
+    paired_ge_mri = measured_ge[measured_ge["has_mri"]].copy()
+
+    mri_only = mri_only_meta[
+        (mri_only_meta["has_mri"]) &
+        (mri_only_meta["diagnosis"].isin(["AD", "CN"]))
+    ].copy()
+
+    measured_ge["has_mri_imputed_gfv"] = False
+    paired_ge_mri["has_mri_imputed_gfv"] = False
+    mri_only["has_mri_imputed_gfv"] = True
+
+    combined = pd.concat(
+        [
+            measured_ge.assign(cohort_source="Measured GE"),
+            mri_only.assign(cohort_source="MRI-only"),
+        ],
+        ignore_index=True,
+        sort=False,
+    )
+
+    # Important: measured GE has real GFV; MRI-only has imputed GFV.
+    # Combined section includes modality rows to avoid overinterpreting incomplete sex/APOE fields.
+    rows = []
+    add_demographic_section(rows, "Measured GE cohort", measured_ge, include_modality_rows=True)
+    add_demographic_section(rows, "Paired GE+MRI cohort", paired_ge_mri, include_modality_rows=True)
+    add_demographic_section(rows, "MRI-only cohort", mri_only, include_modality_rows=True)
+    add_demographic_section(rows, "Combined molecular-representation cohort", combined, include_modality_rows=True)
+
+    table1 = pd.DataFrame(rows)
+
+    with pd.ExcelWriter(TABLE1_PATH, engine="openpyxl") as writer:
+        table1.to_excel(writer, index=False, sheet_name="Table 1")
+
+    style_table1(TABLE1_PATH)
+
+
+def create_table_s1_data_dictionary(paired_meta: pd.DataFrame, mri_only_meta: pd.DataFrame) -> None:
+    rows = []
+
+    for col in paired_meta.columns:
+        rows.append({
+            "Variable name": col,
+            "Source file": "Paired_data_metadata.csv",
+            "Description": "",
+            "Data type": str(paired_meta[col].dtype),
+            "Used in analysis": "",
+            "Notes": "",
+        })
+
+    for col in mri_only_meta.columns:
+        rows.append({
+            "Variable name": col,
+            "Source file": "mri_only_metadata.csv",
+            "Description": "",
+            "Data type": str(mri_only_meta[col].dtype),
+            "Used in analysis": "",
+            "Notes": "",
+        })
+
+    table_s1 = pd.DataFrame(rows)
+
+    with pd.ExcelWriter(TABLE_S1_PATH, engine="openpyxl") as writer:
+        table_s1.to_excel(writer, index=False, sheet_name="Table S1")
+
+    style_generic_excel(TABLE_S1_PATH, "Table S1")
+
+
+def create_table_s2_cohort_availability(paired_meta: pd.DataFrame, mri_only_meta: pd.DataFrame) -> None:
+    measured_ge = paired_meta[
+        (paired_meta["ge_column_found"]) &
+        (paired_meta["diagnosis"].isin(["AD", "CN"]))
+    ].copy()
+
+    paired_ge_mri = measured_ge[measured_ge["has_mri"]].copy()
+
+    mri_only = mri_only_meta[
+        (mri_only_meta["has_mri"]) &
+        (mri_only_meta["diagnosis"].isin(["AD", "CN"]))
+    ].copy()
+
+    rows = [
+        {
+            "Cohort": "Measured GE cohort",
+            "Subjects, n": len(measured_ge),
+            "CN, n": int((measured_ge["diagnosis"] == "CN").sum()),
+            "AD, n": int((measured_ge["diagnosis"] == "AD").sum()),
+            "Measured gene expression, n": len(measured_ge),
+            "MRI scans, n": int(measured_ge["has_mri"].sum()),
+            "MRI-imputed GFV, n": 0,
+            "Analysis role": "DEG analysis, gene branch, and real GFV construction",
+        },
+        {
+            "Cohort": "Paired GE+MRI cohort",
+            "Subjects, n": len(paired_ge_mri),
+            "CN, n": int((paired_ge_mri["diagnosis"] == "CN").sum()),
+            "AD, n": int((paired_ge_mri["diagnosis"] == "AD").sum()),
+            "Measured gene expression, n": len(paired_ge_mri),
+            "MRI scans, n": len(paired_ge_mri),
+            "MRI-imputed GFV, n": 0,
+            "Analysis role": "MRI-to-GFV training and evaluation",
+        },
+        {
+            "Cohort": "MRI-only cohort",
+            "Subjects, n": len(mri_only),
+            "CN, n": int((mri_only["diagnosis"] == "CN").sum()),
+            "AD, n": int((mri_only["diagnosis"] == "AD").sum()),
+            "Measured gene expression, n": 0,
+            "MRI scans, n": len(mri_only),
+            "MRI-imputed GFV, n": len(mri_only),
+            "Analysis role": "MRI-imputed GFV generation",
+        },
+        {
+            "Cohort": "Combined molecular-representation cohort",
+            "Subjects, n": len(measured_ge) + len(mri_only),
+            "CN, n": int((measured_ge["diagnosis"] == "CN").sum()) + int((mri_only["diagnosis"] == "CN").sum()),
+            "AD, n": int((measured_ge["diagnosis"] == "AD").sum()) + int((mri_only["diagnosis"] == "AD").sum()),
+            "Measured gene expression, n": len(measured_ge),
+            "MRI scans, n": int(measured_ge["has_mri"].sum()) + len(mri_only),
+            "MRI-imputed GFV, n": len(mri_only),
+            "Analysis role": "Final measured + MRI-imputed GFV classifier",
+        },
+    ]
+
+    table_s2 = pd.DataFrame(rows)
+
+    with pd.ExcelWriter(TABLE_S2_PATH, engine="openpyxl") as writer:
+        table_s2.to_excel(writer, index=False, sheet_name="Table S2")
+
+    style_generic_excel(TABLE_S2_PATH, "Table S2")
+
+
+def main() -> None:
+    paired_meta_path = DATA_DIR / "Paired_data_metadata.csv"
+    mri_only_meta_path = DATA_DIR / "mri_only_metadata.csv"
+    ge_path = DATA_DIR / "gene_expression_data.csv"
+    paired_mri_dir = DATA_DIR / "paired_MRI"
+    only_mri_dir = DATA_DIR / "only_MRI"
+
+    required_paths = [
+        paired_meta_path,
+        mri_only_meta_path,
+        ge_path,
+        paired_mri_dir,
+        only_mri_dir,
+    ]
+
+    for path in required_paths:
+        if not path.exists():
+            raise FileNotFoundError(f"Missing required path: {path}")
+
+    paired_meta = pd.read_csv(paired_meta_path)
+    mri_only_meta = pd.read_csv(mri_only_meta_path)
+    ge_preview = pd.read_csv(ge_path, low_memory=False, nrows=5)
+
+    paired_meta["has_mri"] = bool_series(paired_meta["has_mri"])
+    paired_meta["has_measured_ge"] = bool_series(paired_meta["has_measured_ge"])
+
+    if "ge_column_found" in paired_meta.columns:
+        paired_meta["ge_column_found"] = bool_series(paired_meta["ge_column_found"])
+    else:
+        paired_meta["ge_column_found"] = True
+
+    mri_only_meta["has_mri"] = bool_series(mri_only_meta["has_mri"])
+    mri_only_meta["has_measured_ge"] = bool_series(mri_only_meta["has_measured_ge"])
+
+    paired_mri_files = list(paired_mri_dir.glob("*.nii.gz"))
+    only_mri_files = list(only_mri_dir.glob("*.nii.gz"))
+
+    measured_ge = paired_meta[
+        (paired_meta["ge_column_found"]) &
+        (paired_meta["diagnosis"].isin(["AD", "CN"]))
+    ].copy()
+
+    paired_ge_mri = measured_ge[measured_ge["has_mri"]].copy()
+
+    mri_only = mri_only_meta[
+        (mri_only_meta["has_mri"]) &
+        (mri_only_meta["diagnosis"].isin(["AD", "CN"]))
+    ].copy()
+
+    if OLD_SIMPLE_TABLE1.exists():
+        OLD_SIMPLE_TABLE1.unlink()
+
+    create_table1(paired_meta, mri_only_meta)
+    create_table_s1_data_dictionary(paired_meta, mri_only_meta)
+    create_table_s2_cohort_availability(paired_meta, mri_only_meta)
+
+    print("========== CLEAN DATA VALIDATION ==========")
+    print(f"Measured GE cohort: {len(measured_ge)}")
+    print(measured_ge["diagnosis"].value_counts().to_string())
+    print()
+    print(f"Paired GE+MRI cohort: {len(paired_ge_mri)}")
+    print(paired_ge_mri["diagnosis"].value_counts().to_string())
+    print()
+    print(f"MRI-only cohort: {len(mri_only)}")
+    print(mri_only["diagnosis"].value_counts().to_string())
+    print()
+    print(f"Paired MRI files found: {len(paired_mri_files)}")
+    print(f"MRI-only files found: {len(only_mri_files)}")
+    print(f"Gene-expression preview shape: {ge_preview.shape}")
+    print("First 10 gene-expression columns:")
+    print(ge_preview.columns[:10].tolist())
+    print()
+    print("Saved files:")
+    print(TABLE1_PATH)
+    print(TABLE_S1_PATH)
+    print(TABLE_S2_PATH)
+    print("===========================================")
+
+
+if __name__ == "__main__":
+    main()
+
+############################################################
+FILE: src/xigcvae/utils/excel_style.py
+############################################################
+"""
+Reusable Excel styling utilities for manuscript tables.
+
+Main tables should use stronger journal-style formatting.
+Supplementary tables should remain clean, readable, and filterable.
+"""
+
+from pathlib import Path
+from openpyxl import load_workbook
+from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+from openpyxl.utils import get_column_letter
+
+
+def style_supplementary_table(
+    path,
+    sheet_name,
+    freeze_panes="A2",
+    header_fill="D9D9D9",
+    max_width=38,
+):
+    path = Path(path)
+    wb = load_workbook(path)
+    ws = wb[sheet_name]
+
+    header = PatternFill("solid", fgColor=header_fill)
+    thin = Side(style="thin", color="D9D9D9")
+    border = Border(left=thin, right=thin, top=thin, bottom=thin)
+
+    for row in ws.iter_rows():
+        for cell in row:
+            cell.font = Font(name="Times New Roman", size=11)
+            cell.alignment = Alignment(vertical="top", wrap_text=True)
+            cell.border = border
+
+    for cell in ws[1]:
+        cell.font = Font(name="Times New Roman", size=11, bold=True)
+        cell.fill = header
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+
+    for col_idx in range(1, ws.max_column + 1):
+        col_letter = get_column_letter(col_idx)
+
+        values = []
+        for row_idx in range(1, min(ws.max_row, 200) + 1):
+            value = ws.cell(row_idx, col_idx).value
+            if value is not None:
+                values.append(str(value))
+
+        if values:
+            width = min(max(max(len(v) for v in values) + 2, 12), max_width)
+        else:
+            width = 12
+
+        ws.column_dimensions[col_letter].width = width
+
+    ws.freeze_panes = freeze_panes
+    ws.auto_filter.ref = ws.dimensions
+
+    wb.save(path)
+
+############################################################
+FILE: src/xigcvae/deg/run_deg_analysis.py
+############################################################
+"""
+limma-based differential expression analysis for AD versus CN.
+
+This script prepares ADNI gene-expression data for limma, runs the R limma
+analysis, and creates a journal-style supplementary Excel table.
+
+Model:
+    expression ~ diagnosis + age + sex + APOE4
+
+Diagnosis coefficient:
+    AD versus CN
+
+Outputs:
+- outputs/DEG/limma_input_expression_matrix.csv
+- outputs/DEG/limma_input_feature_info.csv
+- outputs/DEG/limma_input_sample_metadata.csv
+- outputs/DEG/deg_results_all_genes.csv
+- outputs/DEG/nominal_significant_gene_panel_p_lt_0_05.csv
+- outputs/DEG/deg_sample_metadata.csv
+- outputs/DEG/deg_design_matrix.csv
+- outputs/tables/supplementary/Table_S3_DEG_results.xlsx
+"""
+
+from pathlib import Path
+import subprocess
+import shutil
+import pandas as pd
+
+from src.xigcvae.utils.excel_style import style_supplementary_table
+
+
+ROOT = Path("/N/project/SingleCell_Image/Ronak/Project_folder")
+DATA_DIR = ROOT / "data"
+OUT_DIR = ROOT / "outputs" / "DEG"
+TABLE_SUPP_DIR = ROOT / "outputs" / "tables" / "supplementary"
+
+OUT_DIR.mkdir(parents=True, exist_ok=True)
+TABLE_SUPP_DIR.mkdir(parents=True, exist_ok=True)
+
+GE_FILE = DATA_DIR / "gene_expression_data.csv"
+META_FILE = DATA_DIR / "Paired_data_metadata.csv"
+R_SCRIPT = ROOT / "src" / "xigcvae" / "deg" / "run_limma_deg.R"
+
+LIMMA_EXPR_INPUT = OUT_DIR / "limma_input_expression_matrix.csv"
+LIMMA_FEATURE_INPUT = OUT_DIR / "limma_input_feature_info.csv"
+LIMMA_META_INPUT = OUT_DIR / "limma_input_sample_metadata.csv"
+
+DEG_ALL_CSV = OUT_DIR / "deg_results_all_genes.csv"
+NOMINAL_PANEL_CSV = OUT_DIR / "nominal_significant_gene_panel_p_lt_0_05.csv"
+SAMPLE_META_CSV = OUT_DIR / "deg_sample_metadata.csv"
+DESIGN_MATRIX_CSV = OUT_DIR / "deg_design_matrix.csv"
+TABLE_S3_XLSX = TABLE_SUPP_DIR / "Table_S3_DEG_results.xlsx"
+
+
+def bool_series(series: pd.Series) -> pd.Series:
+    if series.dtype == bool:
+        return series
+    return series.astype(str).str.lower().isin(["true", "1", "yes"])
+
+
+def find_row_index(df: pd.DataFrame, label: str) -> int:
+    matches = df.index[df.iloc[:, 0].astype(str).str.strip() == label].tolist()
+    if not matches:
+        raise ValueError(f"Could not find row labeled: {label}")
+    return matches[0]
+
+
+def prepare_limma_inputs() -> pd.DataFrame:
+    print("Reading paired metadata...")
+    meta = pd.read_csv(META_FILE)
+
+    if "ge_column_found" in meta.columns:
+        meta["ge_column_found"] = bool_series(meta["ge_column_found"])
+    else:
+        meta["ge_column_found"] = True
+
+    meta = meta[
+        (meta["ge_column_found"]) &
+        (meta["diagnosis"].isin(["AD", "CN"]))
+    ].copy()
+
+    meta["diagnosis_numeric"] = (meta["diagnosis"] == "AD").astype(int)
+
+    required_covariates = [
+        "ge_sample_column",
+        "diagnosis",
+        "diagnosis_numeric",
+        "age",
+        "sex",
+        "apoe4_allele_count",
+    ]
+
+    missing_covariates = [c for c in required_covariates if c not in meta.columns]
+    if missing_covariates:
+        raise ValueError(f"Missing required metadata columns: {missing_covariates}")
+
+    print("Reading gene-expression file...")
+    ge = pd.read_csv(GE_FILE, low_memory=False)
+
+    probeset_row = find_row_index(ge, "ProbeSet")
+
+    sample_cols = meta["ge_sample_column"].astype(str).tolist()
+    missing_cols = [c for c in sample_cols if c not in ge.columns]
+
+    if missing_cols:
+        raise ValueError(
+            "Some GE sample columns from metadata are missing in gene_expression_data.csv: "
+            f"{missing_cols[:10]}"
+        )
+
+    expr = ge.iloc[probeset_row + 1:].copy()
+
+    feature_info = expr.iloc[:, :3].copy()
+    feature_info.columns = ["probe_id", "locus_link", "gene_symbol"]
+    feature_info["probe_id"] = feature_info["probe_id"].astype(str)
+
+    expr_matrix = expr[sample_cols].apply(pd.to_numeric, errors="coerce")
+    expr_matrix.insert(0, "probe_id", feature_info["probe_id"].values)
+
+    # Remove probes with any missing expression across selected samples.
+    before_features = len(expr_matrix)
+    expr_matrix = expr_matrix.dropna(axis=0)
+    after_features = len(expr_matrix)
+
+    retained_probe_ids = set(expr_matrix["probe_id"].astype(str))
+    feature_info = feature_info[
+        feature_info["probe_id"].astype(str).isin(retained_probe_ids)
+    ].copy()
+
+    # Keep feature_info in the same order as expression matrix.
+    feature_info = feature_info.set_index("probe_id").loc[
+        expr_matrix["probe_id"].astype(str)
+    ].reset_index()
+
+    sample_meta = meta[required_covariates].copy()
+    sample_meta["ge_sample_column"] = sample_meta["ge_sample_column"].astype(str)
+
+    sample_meta.to_csv(LIMMA_META_INPUT, index=False)
+    expr_matrix.to_csv(LIMMA_EXPR_INPUT, index=False)
+    feature_info.to_csv(LIMMA_FEATURE_INPUT, index=False)
+
+    print("Prepared limma inputs.")
+    print(f"Measured GE subjects before limma covariate filtering: {len(sample_meta)}")
+    print(sample_meta["diagnosis"].value_counts().to_string())
+    print(f"Expression features before missing-expression filtering: {before_features}")
+    print(f"Expression features after missing-expression filtering: {after_features}")
+
+    return sample_meta
+
+
+def run_limma() -> None:
+    rscript = shutil.which("Rscript")
+    if rscript is None:
+        raise RuntimeError(
+            "Rscript was not found in the current environment. "
+            "Load an R module first, then rerun this script."
+        )
+
+    cmd = [rscript, str(R_SCRIPT), str(ROOT)]
+
+    print()
+    print("Running limma through Rscript...")
+    print(" ".join(cmd))
+
+    completed = subprocess.run(
+        cmd,
+        check=True,
+        text=True,
+        capture_output=True,
+    )
+
+    print(completed.stdout)
+
+    if completed.stderr.strip():
+        print("R stderr:")
+        print(completed.stderr)
+
+
+def make_table_s3() -> pd.DataFrame:
+    if not DEG_ALL_CSV.exists():
+        raise FileNotFoundError(f"limma output not found: {DEG_ALL_CSV}")
+
+    results = pd.read_csv(DEG_ALL_CSV)
+
+    with pd.ExcelWriter(TABLE_S3_XLSX, engine="openpyxl") as writer:
+        results.to_excel(writer, index=False, sheet_name="Table S3")
+
+    style_supplementary_table(
+        TABLE_S3_XLSX,
+        "Table S3",
+        freeze_panes="A2",
+        max_width=34,
+    )
+
+    return results
+
+
+def main() -> None:
+    stale_top_464 = OUT_DIR / "top_464_gene_panel.csv"
+    if stale_top_464.exists():
+        stale_top_464.unlink()
+
+    print("========== limma DEG ANALYSIS ==========")
+    print("Model: expression ~ diagnosis + age + sex + APOE4")
+    print("Diagnosis coefficient: AD versus CN")
+    print()
+
+    prepare_limma_inputs()
+    run_limma()
+    results = make_table_s3()
+
+    sample_meta = pd.read_csv(SAMPLE_META_CSV)
+
+    print("========== DEG SUMMARY ==========")
+    print(f"Samples used in limma: {len(sample_meta)}")
+    print(sample_meta["diagnosis"].value_counts().to_string())
+    print(f"Expression features tested: {len(results)}")
+    print(f"Nominal P < 0.05: {(results['Raw P value'] < 0.05).sum()}")
+    print(f"FDR < 0.05: {(results['FDR-adjusted P value'] < 0.05).sum()}")
+    print()
+    print("Top 10 limma DEG results:")
+    print(
+        results.head(10)[
+            [
+                "Gene symbol",
+                "Probe ID / feature ID",
+                "limma logFC AD vs CN",
+                "Raw P value",
+                "FDR-adjusted P value",
+                "Direction in AD",
+            ]
+        ].to_string(index=False)
+    )
+    print()
+    print("Saved:")
+    print(DEG_ALL_CSV)
+    print(NOMINAL_PANEL_CSV)
+    print(SAMPLE_META_CSV)
+    print(DESIGN_MATRIX_CSV)
+    print(TABLE_S3_XLSX)
+    print("=================================")
+
+
+if __name__ == "__main__":
+    main()
+
+############################################################
+FILE: src/xigcvae/deg/run_limma_deg.R
+############################################################
+# limma differential expression analysis for AD versus CN.
+#
+# Model:
+#   expression ~ diagnosis + age + sex + APOE4
+#
+# Diagnosis coefficient:
+#   AD versus CN
+#
+# Inputs are prepared by run_deg_analysis.py.
+
+args <- commandArgs(trailingOnly = TRUE)
+
+if (length(args) != 1) {
+  stop("Usage: Rscript run_limma_deg.R <project_root>")
+}
+
+root <- args[1]
+r_libs <- file.path(root, "R_libs")
+
+if (dir.exists(r_libs)) {
+  .libPaths(c(r_libs, .libPaths()))
+}
+
+if (!requireNamespace("limma", quietly = TRUE)) {
+  stop(
+    paste(
+      "The R package 'limma' is not installed or not visible.",
+      "Install limma into R_libs or load the correct R environment first.",
+      sep = "\n"
+    )
+  )
+}
+
+library(limma)
+
+out_dir <- file.path(root, "outputs", "DEG")
+
+expr_file <- file.path(out_dir, "limma_input_expression_matrix.csv")
+feature_file <- file.path(out_dir, "limma_input_feature_info.csv")
+meta_file <- file.path(out_dir, "limma_input_sample_metadata.csv")
+
+expr_df <- read.csv(expr_file, check.names = FALSE, stringsAsFactors = FALSE)
+feature_df <- read.csv(feature_file, check.names = FALSE, stringsAsFactors = FALSE)
+meta <- read.csv(meta_file, check.names = FALSE, stringsAsFactors = FALSE)
+
+rownames(expr_df) <- expr_df$probe_id
+expr_df$probe_id <- NULL
+
+expr_mat <- as.matrix(expr_df)
+storage.mode(expr_mat) <- "numeric"
+
+rownames(meta) <- meta$ge_sample_column
+meta <- meta[colnames(expr_mat), , drop = FALSE]
+
+meta$diagnosis <- relevel(factor(meta$diagnosis), ref = "CN")
+meta$sex <- factor(meta$sex)
+meta$age <- as.numeric(meta$age)
+meta$apoe4_allele_count <- as.numeric(meta$apoe4_allele_count)
+
+complete_samples <- complete.cases(
+  meta[, c("diagnosis", "age", "sex", "apoe4_allele_count")]
+)
+
+meta <- meta[complete_samples, , drop = FALSE]
+expr_mat <- expr_mat[, rownames(meta), drop = FALSE]
+
+design <- model.matrix(
+  ~ diagnosis + age + sex + apoe4_allele_count,
+  data = meta
+)
+
+fit <- lmFit(expr_mat, design)
+fit <- eBayes(fit)
+
+coef_name <- "diagnosisAD"
+
+if (!(coef_name %in% colnames(design))) {
+  stop(paste("Could not find coefficient:", coef_name))
+}
+
+tt <- topTable(
+  fit,
+  coef = coef_name,
+  number = Inf,
+  adjust.method = "BH",
+  sort.by = "P"
+)
+
+tt$probe_id <- rownames(tt)
+
+results <- merge(
+  tt,
+  feature_df,
+  by = "probe_id",
+  all.x = TRUE,
+  sort = FALSE
+)
+
+results <- results[order(results$P.Value), ]
+
+results$rank_by_raw_p_value <- seq_len(nrow(results))
+results$selected_for_464_gene_panel <- results$rank_by_raw_p_value <= 464
+results$direction_in_AD <- ifelse(results$logFC > 0, "Higher in AD", "Lower in AD")
+
+results_out <- data.frame(
+  `Gene symbol` = results$gene_symbol,
+  `Probe ID / feature ID` = results$probe_id,
+  `LocusLink` = results$locus_link,
+  `limma logFC AD vs CN` = results$logFC,
+  `Average expression` = results$AveExpr,
+  `Moderated t statistic` = results$t,
+  `Raw P value` = results$P.Value,
+  `FDR-adjusted P value` = results$adj.P.Val,
+  `B statistic` = results$B,
+  `Rank by raw P value` = results$rank_by_raw_p_value,
+  `Selected for 464-gene panel` = results$selected_for_464_gene_panel,
+  `Direction in AD` = results$direction_in_AD,
+  check.names = FALSE
+)
+
+write.csv(
+  results_out,
+  file.path(out_dir, "deg_results_all_genes.csv"),
+  row.names = FALSE
+)
+
+write.csv(
+  head(results_out, 464),
+  file.path(out_dir, "top_464_gene_panel.csv"),
+  row.names = FALSE
+)
+
+write.csv(
+  meta,
+  file.path(out_dir, "deg_sample_metadata.csv"),
+  row.names = FALSE
+)
+
+write.csv(
+  as.data.frame(design),
+  file.path(out_dir, "deg_design_matrix.csv"),
+  row.names = TRUE
+)
+
+cat("limma DEG completed.\n")
+cat("Samples used:", nrow(meta), "\n")
+cat("Design terms:", paste(colnames(design), collapse = ", "), "\n")
+cat("Features tested:", nrow(results_out), "\n")
+cat("Nominal P < 0.05:", sum(results_out$`Raw P value` < 0.05), "\n")
+cat("FDR < 0.05:", sum(results_out$`FDR-adjusted P value` < 0.05), "\n")
+
+############################################################
+FILE: src/xigcvae/models/gene_branch.py
+############################################################
+"""
+Gene-expression branch model.
+
+Input:
+    DEG-ranked gene/probe expression vector
+
+Output:
+    GFV = gene-expression feature vector
+    logits = AD/CN prediction logits
+"""
+
+import torch
+import torch.nn as nn
+
+
+class GeneExpressionBranch(nn.Module):
+    def __init__(
+        self,
+        input_dim: int,
+        gfv_dim: int = 128,
+        dropout: float = 0.60,
+        num_classes: int = 2,
+    ):
+        super().__init__()
+
+        self.input_dim = input_dim
+        self.gfv_dim = gfv_dim
+
+        self.encoder = nn.Sequential(
+            nn.LayerNorm(input_dim),
+            nn.Dropout(dropout),
+            nn.Linear(input_dim, gfv_dim),
+            nn.LayerNorm(gfv_dim),
+            nn.ReLU(),
+            nn.Dropout(dropout),
+        )
+
+        self.classifier = nn.Linear(gfv_dim, num_classes)
+
+    def forward(self, x: torch.Tensor):
+        gfv = self.encoder(x)
+        logits = self.classifier(gfv)
+        return logits, gfv
+
+############################################################
+FILE: src/xigcvae/training/run_gene_panel_sensitivity.py
+############################################################
+"""
+Gene-panel size sensitivity analysis for the gene-expression branch.
+
+This script trains the same GE branch architecture using different DEG-ranked
+input sizes and selects the final gene-panel size based on validation performance.
+
+Panels:
+- Top 128 DEG-ranked probes
+- Top 256 DEG-ranked probes
+- Top 464 DEG-ranked probes
+- Top 512 DEG-ranked probes
+- Top 1000 DEG-ranked probes
+- Top 1500 DEG-ranked probes
+- Top 2000 DEG-ranked probes
+- All nominally significant probes with raw P < 0.05
+
+Inputs:
+- data/gene_expression_data.csv
+- outputs/DEG/deg_results_all_genes.csv
+- outputs/DEG/deg_sample_metadata.csv
+
+Outputs:
+- outputs/gene_branch/gene_panel_sensitivity_metrics.csv
+- outputs/gene_branch/gene_panel_sensitivity_summary.csv
+- outputs/gene_branch/selected_gene_panel_from_sensitivity.csv
+- outputs/tables/supplementary/Table_S4_Gene_panel_sensitivity.xlsx
+"""
+
+from pathlib import Path
+import copy
+import random
+import re
+import shutil
+import warnings
+
+import numpy as np
+import pandas as pd
+import torch
+import torch.nn as nn
+from torch.utils.data import DataLoader, TensorDataset
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import (
+    accuracy_score,
+    balanced_accuracy_score,
+    roc_auc_score,
+    precision_score,
+    recall_score,
+    f1_score,
+    confusion_matrix,
+)
+
+from src.xigcvae.models.gene_branch import GeneExpressionBranch
+from src.xigcvae.utils.excel_style import style_supplementary_table
+
+
+warnings.filterwarnings("ignore", category=UserWarning)
+
+
+ROOT = Path("/N/project/SingleCell_Image/Ronak/Project_folder")
+DATA_DIR = ROOT / "data"
+
+OUT_DIR = ROOT / "outputs" / "gene_branch"
+MODEL_DIR = OUT_DIR / "sensitivity_models"
+MANIFEST_DIR = ROOT / "manifests"
+TABLE_SUPP_DIR = ROOT / "outputs" / "tables" / "supplementary"
+
+OUT_DIR.mkdir(parents=True, exist_ok=True)
+MANIFEST_DIR.mkdir(parents=True, exist_ok=True)
+TABLE_SUPP_DIR.mkdir(parents=True, exist_ok=True)
+
+GE_FILE = DATA_DIR / "gene_expression_data.csv"
+DEG_RESULTS_FILE = ROOT / "outputs" / "DEG" / "deg_results_all_genes.csv"
+DEG_SAMPLE_META_FILE = ROOT / "outputs" / "DEG" / "deg_sample_metadata.csv"
+
+METRICS_CSV = OUT_DIR / "gene_panel_sensitivity_metrics.csv"
+SUMMARY_CSV = OUT_DIR / "gene_panel_sensitivity_summary.csv"
+SELECTED_PANEL_CSV = OUT_DIR / "selected_gene_panel_from_sensitivity.csv"
+TABLE_S4_XLSX = TABLE_SUPP_DIR / "Table_S4_Gene_panel_sensitivity.xlsx"
+
+GFV_DIM = 128
+BATCH_SIZE = 16
+MAX_EPOCHS = 300
+PATIENCE = 30
+LEARNING_RATE = 1e-4
+WEIGHT_DECAY = 5e-3
+DROPOUT = 0.60
+LABEL_SMOOTHING = 0.05
+
+SEEDS = [42, 2024, 2026, 777, 1001]
+
+PANEL_SPECS = [
+    {"label": "Top 50", "kind": "top_n", "n": 50},
+    {"label": "Top 100", "kind": "top_n", "n": 100},
+    {"label": "Top 250", "kind": "top_n", "n": 250},
+    {"label": "Top 500", "kind": "top_n", "n": 500},
+    {"label": "Top 1000", "kind": "top_n", "n": 1000},
+    {"label": "Top 2000", "kind": "top_n", "n": 2000},
+    {"label": "All nominal P < 0.05", "kind": "nominal_p", "threshold": 0.05},
+]
+
+
+def safe_label(label: str) -> str:
+    return re.sub(r"[^A-Za-z0-9]+", "_", label).strip("_")
+
+
+def set_seed(seed: int) -> None:
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+
+
+def find_row_index(df: pd.DataFrame, label: str) -> int:
+    matches = df.index[df.iloc[:, 0].astype(str).str.strip() == label].tolist()
+    if not matches:
+        raise ValueError(f"Could not find row labeled: {label}")
+    return matches[0]
+
+
+def load_expression_matrix():
+    print("Reading DEG sample metadata...")
+    sample_meta = pd.read_csv(DEG_SAMPLE_META_FILE)
+    sample_meta["ge_sample_column"] = sample_meta["ge_sample_column"].astype(str)
+
+    print("Reading DEG-ranked gene list...")
+    deg_results = pd.read_csv(DEG_RESULTS_FILE)
+    deg_results["Probe ID / feature ID"] = deg_results["Probe ID / feature ID"].astype(str)
+
+    print("Reading gene-expression file...")
+    ge = pd.read_csv(GE_FILE, low_memory=False)
+
+    probeset_row = find_row_index(ge, "ProbeSet")
+    expr = ge.iloc[probeset_row + 1:].copy()
+
+    probe_ids = expr.iloc[:, 0].astype(str).values
+    sample_cols = sample_meta["ge_sample_column"].tolist()
+
+    missing_cols = [c for c in sample_cols if c not in ge.columns]
+    if missing_cols:
+        raise ValueError(f"Missing sample columns in GE file: {missing_cols[:10]}")
+
+    expr_values = expr[sample_cols].apply(pd.to_numeric, errors="coerce")
+    expr_values.index = probe_ids
+
+    expression_df = expr_values.T
+    expression_df.index = sample_cols
+
+    before = expression_df.shape[1]
+    expression_df = expression_df.dropna(axis=1)
+    after = expression_df.shape[1]
+
+    sample_meta = sample_meta.set_index("ge_sample_column").loc[expression_df.index].reset_index()
+    if "ge_sample_column" not in sample_meta.columns and "index" in sample_meta.columns:
+        sample_meta = sample_meta.rename(columns={"index": "ge_sample_column"})
+    sample_meta["ge_sample_column"] = sample_meta["ge_sample_column"].astype(str)
+
+    print(f"Expression matrix: {expression_df.shape[0]} samples x {expression_df.shape[1]} probes")
+    print(f"Dropped probes with missing expression: {before - after}")
+
+    return expression_df, sample_meta, deg_results
+
+
+def get_panel_probes(deg_results: pd.DataFrame, panel_spec: dict):
+    if panel_spec["kind"] == "top_n":
+        selected = deg_results.head(panel_spec["n"]).copy()
+        rule = f"Top {panel_spec['n']} limma-ranked probes by raw P value"
+
+    elif panel_spec["kind"] == "nominal_p":
+        threshold = panel_spec["threshold"]
+        selected = deg_results[deg_results["Raw P value"] < threshold].copy()
+        rule = f"All nominally significant limma-ranked probes with raw P < {threshold}"
+
+    else:
+        raise ValueError(f"Unknown panel kind: {panel_spec['kind']}")
+
+    probes = selected["Probe ID / feature ID"].astype(str).tolist()
+    return probes, rule
+
+
+def make_split(sample_meta: pd.DataFrame, seed: int) -> pd.DataFrame:
+    sample_ids = sample_meta["ge_sample_column"].astype(str).values
+    labels = sample_meta["diagnosis_numeric"].astype(int).values
+
+    train_ids, temp_ids, y_train, y_temp = train_test_split(
+        sample_ids,
+        labels,
+        test_size=0.30,
+        random_state=seed,
+        stratify=labels,
+    )
+
+    val_ids, test_ids, y_val, y_test = train_test_split(
+        temp_ids,
+        y_temp,
+        test_size=0.50,
+        random_state=seed,
+        stratify=y_temp,
+    )
+
+    split_df = pd.DataFrame(
+        [{"ge_sample_column": sid, "split": "train"} for sid in train_ids]
+        + [{"ge_sample_column": sid, "split": "val"} for sid in val_ids]
+        + [{"ge_sample_column": sid, "split": "test"} for sid in test_ids]
+    )
+
+    split_df = split_df.merge(sample_meta, on="ge_sample_column", how="left")
+
+    split_path = MANIFEST_DIR / f"gene_panel_sensitivity_split_seed_{seed}.csv"
+    split_df.to_csv(split_path, index=False)
+
+    return split_df
+
+
+class GeneBranchTrainer:
+    @staticmethod
+    def compute_metrics(y_true, y_prob, y_pred):
+        y_true = np.asarray(y_true)
+        y_prob = np.asarray(y_prob)
+        y_pred = np.asarray(y_pred)
+
+        auc = roc_auc_score(y_true, y_prob) if len(np.unique(y_true)) == 2 else np.nan
+        tn, fp, fn, tp = confusion_matrix(y_true, y_pred, labels=[0, 1]).ravel()
+        specificity = tn / (tn + fp) if (tn + fp) > 0 else np.nan
+
+        return {
+            "Accuracy": accuracy_score(y_true, y_pred),
+            "Balanced accuracy": balanced_accuracy_score(y_true, y_pred),
+            "AUC": auc,
+            "Precision": precision_score(y_true, y_pred, zero_division=0),
+            "Recall / AD sensitivity": recall_score(y_true, y_pred, zero_division=0),
+            "CN specificity": specificity,
+            "F1 score": f1_score(y_true, y_pred, zero_division=0),
+            "TN": int(tn),
+            "FP": int(fp),
+            "FN": int(fn),
+            "TP": int(tp),
+        }
+
+    @staticmethod
+    def evaluate(model, X, y, device):
+        model.eval()
+        x_tensor = torch.tensor(X, dtype=torch.float32).to(device)
+
+        with torch.no_grad():
+            logits, _ = model(x_tensor)
+            prob = torch.softmax(logits, dim=1)[:, 1].cpu().numpy()
+            pred = np.argmax(torch.softmax(logits, dim=1).cpu().numpy(), axis=1)
+
+        return GeneBranchTrainer.compute_metrics(y, prob, pred)
+
+    @staticmethod
+    def train(X_train, y_train, X_val, y_val, input_dim, seed, device):
+        set_seed(seed)
+
+        model = GeneExpressionBranch(
+            input_dim=input_dim,
+            gfv_dim=GFV_DIM,
+            dropout=DROPOUT,
+            num_classes=2,
+        ).to(device)
+
+        class_counts = np.bincount(y_train.astype(int), minlength=2)
+        class_weights = class_counts.sum() / (2.0 * np.maximum(class_counts, 1))
+        class_weights = torch.tensor(class_weights, dtype=torch.float32).to(device)
+
+        criterion = nn.CrossEntropyLoss(
+            weight=class_weights,
+            label_smoothing=LABEL_SMOOTHING,
+        )
+
+        optimizer = torch.optim.Adam(
+            model.parameters(),
+            lr=LEARNING_RATE,
+            weight_decay=WEIGHT_DECAY,
+        )
+
+        train_dataset = TensorDataset(
+            torch.tensor(X_train, dtype=torch.float32),
+            torch.tensor(y_train, dtype=torch.long),
+        )
+
+        train_loader = DataLoader(
+            train_dataset,
+            batch_size=BATCH_SIZE,
+            shuffle=True,
+            drop_last=False,
+        )
+
+        best_state = None
+        best_val_auc = -np.inf
+        best_epoch = 0
+        patience_counter = 0
+
+        for epoch in range(1, MAX_EPOCHS + 1):
+            model.train()
+
+            for xb, yb in train_loader:
+                xb = xb.to(device)
+                yb = yb.to(device)
+
+                optimizer.zero_grad()
+                logits, _ = model(xb)
+                loss = criterion(logits, yb)
+                loss.backward()
+                optimizer.step()
+
+            val_metrics = GeneBranchTrainer.evaluate(model, X_val, y_val, device)
+            val_score = val_metrics["AUC"]
+
+            if np.isnan(val_score):
+                val_score = val_metrics["Balanced accuracy"]
+
+            if val_score > best_val_auc:
+                best_val_auc = val_score
+                best_state = copy.deepcopy(model.state_dict())
+                best_epoch = epoch
+                patience_counter = 0
+            else:
+                patience_counter += 1
+
+            if patience_counter >= PATIENCE:
+                break
+
+        model.load_state_dict(best_state)
+        return model, best_epoch
+
+
+def summarize_mean_sd(df: pd.DataFrame, col: str) -> str:
+    return f"{df[col].mean():.3f} ± {df[col].std(ddof=1):.3f}"
+
+
+def update_table_s3_with_final_selection(deg_results: pd.DataFrame, selected_probes: list, selected_label: str, selected_size: int):
+    selected_set = set(selected_probes)
+
+    deg_updated = deg_results.copy()
+    deg_updated["Selected for final GE branch panel"] = (
+        deg_updated["Probe ID / feature ID"].astype(str).isin(selected_set)
+    )
+    deg_updated["Final GE branch panel"] = np.where(
+        deg_updated["Selected for final GE branch panel"],
+        selected_label,
+        "",
+    )
+    deg_updated["Final GE branch panel size"] = np.where(
+        deg_updated["Selected for final GE branch panel"],
+        selected_size,
+        "",
+    )
+
+    deg_updated.to_csv(DEG_RESULTS_FILE, index=False)
+
+    table_s3 = ROOT / "outputs" / "tables" / "supplementary" / "Table_S3_DEG_results.xlsx"
+    with pd.ExcelWriter(table_s3, engine="openpyxl") as writer:
+        deg_updated.to_excel(writer, index=False, sheet_name="Table S3")
+
+    style_supplementary_table(table_s3, "Table S3", freeze_panes="A2", max_width=36)
+
+
+def run_sensitivity():
+    if MODEL_DIR.exists():
+        shutil.rmtree(MODEL_DIR)
+    MODEL_DIR.mkdir(parents=True, exist_ok=True)
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+    print("========== GENE-PANEL SIZE SENSITIVITY ==========")
+    print(f"Device: {device}")
+    if torch.cuda.is_available():
+        print(f"GPU: {torch.cuda.get_device_name(0)}")
+    print("Panel specs:")
+    for spec in PANEL_SPECS:
+        print(f"  - {spec['label']}")
+    print(f"Seeds: {SEEDS}")
+    print("=================================================")
+
+    expression_df, sample_meta, deg_results = load_expression_matrix()
+
+    all_rows = []
+
+    for seed in SEEDS:
+        print()
+        print(f"========== Seed {seed} ==========")
+
+        split_df = make_split(sample_meta, seed).set_index("ge_sample_column")
+
+        train_ids = split_df.index[split_df["split"] == "train"].tolist()
+        val_ids = split_df.index[split_df["split"] == "val"].tolist()
+        test_ids = split_df.index[split_df["split"] == "test"].tolist()
+
+        y_train = split_df.loc[train_ids, "diagnosis_numeric"].astype(int).values
+        y_val = split_df.loc[val_ids, "diagnosis_numeric"].astype(int).values
+        y_test = split_df.loc[test_ids, "diagnosis_numeric"].astype(int).values
+
+        print(f"Train / Val / Test: {len(train_ids)} / {len(val_ids)} / {len(test_ids)}")
+        print(f"Train AD/CN: {int(y_train.sum())}/{int((y_train == 0).sum())}")
+        print(f"Val AD/CN: {int(y_val.sum())}/{int((y_val == 0).sum())}")
+        print(f"Test AD/CN: {int(y_test.sum())}/{int((y_test == 0).sum())}")
+
+        for spec in PANEL_SPECS:
+            panel_label = spec["label"]
+            selected_probes, selection_rule = get_panel_probes(deg_results, spec)
+            selected_probes = [p for p in selected_probes if p in expression_df.columns]
+
+            if len(selected_probes) == 0:
+                print(f"Skipping {panel_label}: no probes selected.")
+                continue
+
+            X = expression_df[selected_probes].copy()
+
+            scaler = StandardScaler()
+            X_train = scaler.fit_transform(X.loc[train_ids].values)
+            X_val = scaler.transform(X.loc[val_ids].values)
+            X_test = scaler.transform(X.loc[test_ids].values)
+
+            model, best_epoch = GeneBranchTrainer.train(
+                X_train=X_train,
+                y_train=y_train,
+                X_val=X_val,
+                y_val=y_val,
+                input_dim=X_train.shape[1],
+                seed=seed,
+                device=device,
+            )
+
+            train_metrics = GeneBranchTrainer.evaluate(model, X_train, y_train, device)
+            val_metrics = GeneBranchTrainer.evaluate(model, X_val, y_val, device)
+            test_metrics = GeneBranchTrainer.evaluate(model, X_test, y_test, device)
+
+            for split_name, metrics, n_subjects in [
+                ("train", train_metrics, len(train_ids)),
+                ("val", val_metrics, len(val_ids)),
+                ("test", test_metrics, len(test_ids)),
+            ]:
+                row = {
+                    "Seed": seed,
+                    "Gene panel label": panel_label,
+                    "Selection rule": selection_rule,
+                    "Actual probes used": len(selected_probes),
+                    "Split": split_name,
+                    "Subjects, n": n_subjects,
+                    "Best epoch": best_epoch,
+                    "GFV dimension": GFV_DIM,
+                    "Dropout": DROPOUT,
+                    "Learning rate": LEARNING_RATE,
+                    "Weight decay": WEIGHT_DECAY,
+                    "Label smoothing": LABEL_SMOOTHING,
+                }
+                row.update(metrics)
+                all_rows.append(row)
+
+            model_path = MODEL_DIR / f"gene_branch_{safe_label(panel_label)}_seed_{seed}.pt"
+            torch.save(
+                {
+                    "model_state_dict": model.state_dict(),
+                    "input_dim": X_train.shape[1],
+                    "selected_probes": selected_probes,
+                    "panel_label": panel_label,
+                    "selection_rule": selection_rule,
+                    "seed": seed,
+                    "best_epoch": best_epoch,
+                    "scaler_mean": scaler.mean_,
+                    "scaler_scale": scaler.scale_,
+                },
+                model_path,
+            )
+
+            print(
+                f"{panel_label:22s} | "
+                f"n={len(selected_probes):4d} | "
+                f"Val AUC {val_metrics['AUC']:.3f} | "
+                f"Val BalAcc {val_metrics['Balanced accuracy']:.3f} | "
+                f"Test AUC {test_metrics['AUC']:.3f} | "
+                f"Test BalAcc {test_metrics['Balanced accuracy']:.3f}"
+            )
+
+    metrics_df = pd.DataFrame(all_rows)
+    metrics_df.to_csv(METRICS_CSV, index=False)
+
+    summary_rows = []
+
+    for panel_label in metrics_df["Gene panel label"].drop_duplicates():
+        panel_val = metrics_df[
+            (metrics_df["Gene panel label"] == panel_label) &
+            (metrics_df["Split"] == "val")
+        ].copy()
+
+        panel_test = metrics_df[
+            (metrics_df["Gene panel label"] == panel_label) &
+            (metrics_df["Split"] == "test")
+        ].copy()
+
+        summary_rows.append({
+            "Gene panel label": panel_label,
+            "Selection rule": panel_val["Selection rule"].iloc[0],
+            "Actual probes used": int(panel_val["Actual probes used"].iloc[0]),
+            "Repeats, n": panel_val["Seed"].nunique(),
+            "Validation accuracy, mean ± SD": summarize_mean_sd(panel_val, "Accuracy"),
+            "Validation balanced accuracy, mean ± SD": summarize_mean_sd(panel_val, "Balanced accuracy"),
+            "Validation AUC, mean ± SD": summarize_mean_sd(panel_val, "AUC"),
+            "Validation F1 score, mean ± SD": summarize_mean_sd(panel_val, "F1 score"),
+            "Test accuracy, mean ± SD": summarize_mean_sd(panel_test, "Accuracy"),
+            "Test balanced accuracy, mean ± SD": summarize_mean_sd(panel_test, "Balanced accuracy"),
+            "Test AUC, mean ± SD": summarize_mean_sd(panel_test, "AUC"),
+            "Test F1 score, mean ± SD": summarize_mean_sd(panel_test, "F1 score"),
+            "_val_auc_mean": panel_val["AUC"].mean(),
+            "_val_balacc_mean": panel_val["Balanced accuracy"].mean(),
+            "_test_auc_mean": panel_test["AUC"].mean(),
+        })
+
+    summary_df = pd.DataFrame(summary_rows)
+
+    selected_idx = summary_df.sort_values(
+        ["_val_auc_mean", "_val_balacc_mean", "_test_auc_mean"],
+        ascending=False,
+    ).index[0]
+
+    selected_label = summary_df.loc[selected_idx, "Gene panel label"]
+    selected_size = int(summary_df.loc[selected_idx, "Actual probes used"])
+
+    summary_df["Selected as final panel"] = np.where(
+        summary_df["Gene panel label"] == selected_label,
+        "Yes",
+        "No",
+    )
+
+    summary_df["Selection rationale"] = np.where(
+        summary_df["Gene panel label"] == selected_label,
+        "Selected based on highest mean validation AUC; validation balanced accuracy and test AUC were used as secondary stability criteria.",
+        "Sensitivity comparison panel.",
+    )
+
+    display_summary = summary_df.drop(
+        columns=["_val_auc_mean", "_val_balacc_mean", "_test_auc_mean"]
+    )
+
+    display_summary.to_csv(SUMMARY_CSV, index=False)
+
+    selected_spec = next(spec for spec in PANEL_SPECS if spec["label"] == selected_label)
+    selected_probes, selected_rule = get_panel_probes(deg_results, selected_spec)
+    selected_panel = deg_results[
+        deg_results["Probe ID / feature ID"].astype(str).isin(set(selected_probes))
+    ].copy()
+
+    selected_panel["Final GE branch panel"] = selected_label
+    selected_panel["Final GE branch panel size"] = selected_size
+    selected_panel["Final GE branch selection rule"] = selected_rule
+    selected_panel.to_csv(SELECTED_PANEL_CSV, index=False)
+
+    update_table_s3_with_final_selection(
+        deg_results=deg_results,
+        selected_probes=selected_probes,
+        selected_label=selected_label,
+        selected_size=selected_size,
+    )
+
+    with pd.ExcelWriter(TABLE_S4_XLSX, engine="openpyxl") as writer:
+        display_summary.to_excel(writer, index=False, sheet_name="Summary")
+        metrics_df.to_excel(writer, index=False, sheet_name="Per_seed_results")
+
+    style_supplementary_table(TABLE_S4_XLSX, "Summary", freeze_panes="A2", max_width=44)
+    style_supplementary_table(TABLE_S4_XLSX, "Per_seed_results", freeze_panes="A2", max_width=34)
+
+    print()
+    print("========== SENSITIVITY SUMMARY ==========")
+    print(display_summary.to_string(index=False))
+    print()
+    print(f"Selected final gene-panel: {selected_label}")
+    print(f"Selected final probe count: {selected_size}")
+    print()
+    print("Saved:")
+    print(METRICS_CSV)
+    print(SUMMARY_CSV)
+    print(SELECTED_PANEL_CSV)
+    print(TABLE_S4_XLSX)
+    print("=========================================")
+
+
+if __name__ == "__main__":
+    run_sensitivity()
+
+############################################################
+FILE: src/xigcvae/training/train_final_gene_branch.py
+############################################################
+#!/usr/bin/env python3
+"""
+Train final gene-expression branch using the selected Top 2000 limma-ranked probes.
+
+Outputs:
+  outputs/gene_branch/final_gene_branch_model.pt
+  outputs/gene_branch/final_gene_branch_scaler.pkl
+  outputs/gene_branch/final_gene_branch_config.json
+  outputs/gene_branch/final_gene_branch_metrics.csv
+  outputs/gene_branch/final_gene_branch_predictions.csv
+  outputs/gene_branch/real_gfv_features_302_subjects.csv
+  outputs/gene_branch/final_selected_probe_list.csv
+  outputs/gene_branch/final_gene_branch_training_history.csv
+  outputs/tables/supplementary/Table_S5_Selected_gene_panel.xlsx
+  outputs/tables/supplementary/Table_S6_GE_branch_metrics.xlsx
+  manifests/gene_branch_final_split_seed_42.csv
+"""
+
+from __future__ import annotations
+
+import json
+import pickle
+import random
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+import torch
+import torch.nn as nn
+from sklearn.impute import SimpleImputer
+from sklearn.metrics import (
+    accuracy_score,
+    balanced_accuracy_score,
+    confusion_matrix,
+    f1_score,
+    precision_score,
+    recall_score,
+    roc_auc_score,
+)
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from torch.utils.data import DataLoader, TensorDataset
+
+
+# -----------------------------
+# Configuration
+# -----------------------------
+
+SEED = 42
+GFV_DIM = 128
+BATCH_SIZE = 16
+MAX_EPOCHS = 300
+PATIENCE = 30
+LR = 1e-4
+WEIGHT_DECAY = 5e-3
+DROPOUT = 0.60
+LABEL_SMOOTHING = 0.05
+
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+
+DATA_DIR = PROJECT_ROOT / "data"
+OUTPUT_DIR = PROJECT_ROOT / "outputs" / "gene_branch"
+TABLE_DIR = PROJECT_ROOT / "outputs" / "tables" / "supplementary"
+MANIFEST_DIR = PROJECT_ROOT / "manifests"
+
+GE_FILE = DATA_DIR / "gene_expression_data.csv"
+META_FILE = DATA_DIR / "Paired_data_metadata.csv"
+SELECTED_PANEL_FILE = OUTPUT_DIR / "selected_gene_panel_from_sensitivity.csv"
+
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+TABLE_DIR.mkdir(parents=True, exist_ok=True)
+MANIFEST_DIR.mkdir(parents=True, exist_ok=True)
+
+
+# -----------------------------
+# Utilities
+# -----------------------------
+
+def set_seed(seed: int = 42) -> None:
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+
+
+def to_bool(series: pd.Series) -> pd.Series:
+    return series.astype(str).str.lower().isin(["true", "1", "yes", "y"])
+
+
+def count_unique_gene_symbols(gene_series: pd.Series) -> int:
+    genes = set()
+    for value in gene_series.dropna().astype(str):
+        for gene in value.split("||"):
+            gene = gene.strip()
+            if gene and gene.lower() not in ["nan", "none", ""]:
+                genes.add(gene)
+    return len(genes)
+
+
+def safe_auc(y_true: np.ndarray, y_prob: np.ndarray) -> float:
+    if len(np.unique(y_true)) < 2:
+        return np.nan
+    return float(roc_auc_score(y_true, y_prob))
+
+
+def compute_metrics(y_true: np.ndarray, y_prob: np.ndarray, y_pred: np.ndarray) -> dict:
+    tn, fp, fn, tp = confusion_matrix(y_true, y_pred, labels=[0, 1]).ravel()
+    specificity = tn / (tn + fp) if (tn + fp) > 0 else np.nan
+
+    return {
+        "Subjects, n": int(len(y_true)),
+        "Accuracy": accuracy_score(y_true, y_pred),
+        "Balanced accuracy": balanced_accuracy_score(y_true, y_pred),
+        "AUC": safe_auc(y_true, y_prob),
+        "Precision": precision_score(y_true, y_pred, zero_division=0),
+        "Recall / AD sensitivity": recall_score(y_true, y_pred, zero_division=0),
+        "CN specificity": specificity,
+        "F1 score": f1_score(y_true, y_pred, zero_division=0),
+        "TN": int(tn),
+        "FP": int(fp),
+        "FN": int(fn),
+        "TP": int(tp),
+    }
+
+
+def style_excel(path: Path) -> None:
+    try:
+        from openpyxl import load_workbook
+        from openpyxl.styles import Alignment, Font, PatternFill
+    except Exception:
+        return
+
+    wb = load_workbook(path)
+    header_fill = PatternFill("solid", fgColor="D9D9D9")
+
+    for ws in wb.worksheets:
+        ws.freeze_panes = "A2"
+        ws.auto_filter.ref = ws.dimensions
+
+        for cell in ws[1]:
+            cell.font = Font(bold=True)
+            cell.fill = header_fill
+            cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+
+        for col_cells in ws.columns:
+            values = [str(c.value) if c.value is not None else "" for c in col_cells[:200]]
+            width = min(max(len(v) for v in values) + 2, 45)
+            ws.column_dimensions[col_cells[0].column_letter].width = width
+
+    wb.save(path)
+
+
+# -----------------------------
+# Model
+# -----------------------------
+
+class GeneBranch(nn.Module):
+    def __init__(self, input_dim: int, gfv_dim: int = 128, dropout: float = 0.60):
+        super().__init__()
+
+        self.encoder = nn.Sequential(
+            nn.LayerNorm(input_dim),
+            nn.Dropout(dropout),
+            nn.Linear(input_dim, gfv_dim),
+            nn.LayerNorm(gfv_dim),
+            nn.ReLU(),
+            nn.Dropout(dropout),
+        )
+
+        self.classifier = nn.Linear(gfv_dim, 2)
+
+    def forward(self, x):
+        gfv = self.encoder(x)
+        logits = self.classifier(gfv)
+        return logits, gfv
+
+
+def predict(model: nn.Module, x_np: np.ndarray, device: torch.device) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    model.eval()
+    probs_all = []
+    preds_all = []
+    gfv_all = []
+
+    loader = DataLoader(
+        TensorDataset(torch.tensor(x_np, dtype=torch.float32)),
+        batch_size=128,
+        shuffle=False,
+    )
+
+    with torch.no_grad():
+        for (xb,) in loader:
+            xb = xb.to(device)
+            logits, gfv = model(xb)
+            probs = torch.softmax(logits, dim=1)[:, 1]
+            preds = torch.argmax(logits, dim=1)
+
+            probs_all.append(probs.cpu().numpy())
+            preds_all.append(preds.cpu().numpy())
+            gfv_all.append(gfv.cpu().numpy())
+
+    return np.concatenate(probs_all), np.concatenate(preds_all), np.vstack(gfv_all)
+
+
+def evaluate_loss_auc(model, x_np, y_np, criterion, device):
+    model.eval()
+    losses = []
+    probs = []
+    preds = []
+
+    loader = DataLoader(
+        TensorDataset(
+            torch.tensor(x_np, dtype=torch.float32),
+            torch.tensor(y_np, dtype=torch.long),
+        ),
+        batch_size=128,
+        shuffle=False,
+    )
+
+    with torch.no_grad():
+        for xb, yb in loader:
+            xb = xb.to(device)
+            yb = yb.to(device)
+
+            logits, _ = model(xb)
+            loss = criterion(logits, yb)
+            prob = torch.softmax(logits, dim=1)[:, 1]
+            pred = torch.argmax(logits, dim=1)
+
+            losses.append(loss.item() * len(yb))
+            probs.append(prob.cpu().numpy())
+            preds.append(pred.cpu().numpy())
+
+    probs = np.concatenate(probs)
+    preds = np.concatenate(preds)
+
+    return {
+        "loss": float(np.sum(losses) / len(y_np)),
+        "auc": safe_auc(y_np, probs),
+        "balanced_accuracy": balanced_accuracy_score(y_np, preds),
+        "accuracy": accuracy_score(y_np, preds),
+        "f1": f1_score(y_np, preds, zero_division=0),
+    }
+
+
+# -----------------------------
+# Data loading
+# -----------------------------
+
+def make_unique_columns(cols):
+    """
+    Recreate pandas-style duplicate column names:
+    ADNI2, ADNI2, ADNI2 -> ADNI2, ADNI2.1, ADNI2.2
+    """
+    clean_cols = []
+    counts = {}
+
+    for c in cols:
+        c = "" if pd.isna(c) else str(c).strip()
+
+        if c in counts:
+            counts[c] += 1
+            clean_cols.append(f"{c}.{counts[c]}")
+        else:
+            counts[c] = 0
+            clean_cols.append(c)
+
+    return clean_cols
+
+
+def load_expression_matrix() -> tuple[pd.DataFrame, str, str, str]:
+    print("Reading gene-expression file...")
+    raw = pd.read_csv(GE_FILE, header=None, low_memory=False, dtype=str)
+
+    first_col = raw.iloc[:, 0].astype(str).str.strip()
+    header_matches = np.where(first_col.eq("ProbeSet"))[0]
+
+    if len(header_matches) == 0:
+        raise ValueError("Could not find the expression header row where first column equals 'ProbeSet'.")
+
+    header_idx = int(header_matches[0])
+    header = make_unique_columns(raw.iloc[header_idx].tolist())
+
+    expr = raw.iloc[header_idx + 1:].copy()
+    expr.columns = header
+
+    probe_col = expr.columns[0]
+    locus_col = expr.columns[1]
+    symbol_col = expr.columns[2]
+
+    expr[probe_col] = expr[probe_col].astype(str).str.strip()
+
+    print(f"Expression features loaded: {expr.shape[0]:,}")
+    print(f"Expression sample columns available: {expr.shape[1] - 3:,}")
+    print(f"Example expression sample columns: {list(expr.columns[3:13])}")
+
+    return expr, probe_col, locus_col, symbol_col
+
+
+def prepare_dataset():
+    selected_panel = pd.read_csv(SELECTED_PANEL_FILE)
+    if "Probe ID / feature ID" not in selected_panel.columns:
+        raise ValueError("Selected panel file must contain 'Probe ID / feature ID'.")
+
+    selected_panel["Probe ID / feature ID"] = selected_panel["Probe ID / feature ID"].astype(str)
+    panel_probes = selected_panel["Probe ID / feature ID"].tolist()
+
+    expr, probe_col, locus_col, symbol_col = load_expression_matrix()
+
+    meta = pd.read_csv(META_FILE)
+
+    required_cols = ["subject_id", "ge_sample_column", "diagnosis", "diagnosis_binary", "ge_column_found"]
+    missing_cols = [c for c in required_cols if c not in meta.columns]
+    if missing_cols:
+        raise ValueError(f"Missing columns in metadata: {missing_cols}")
+
+    meta = meta.copy()
+    meta = meta[to_bool(meta["ge_column_found"])]
+    meta = meta[meta["diagnosis"].astype(str).isin(["AD", "CN"])]
+    meta["diagnosis_binary"] = meta["diagnosis_binary"].astype(int)
+
+    sample_cols = meta["ge_sample_column"].astype(str).tolist()
+    missing_sample_cols = [c for c in sample_cols if c not in expr.columns]
+    if missing_sample_cols:
+        raise ValueError(
+            f"{len(missing_sample_cols)} metadata GE sample columns are missing from expression matrix. "
+            f"Examples: {missing_sample_cols[:10]}"
+        )
+
+    expr_panel = expr[expr[probe_col].astype(str).isin(panel_probes)].copy()
+    expr_panel = expr_panel.drop_duplicates(subset=[probe_col], keep="first")
+    expr_panel = expr_panel.set_index(probe_col)
+
+    available_probes = [p for p in panel_probes if p in expr_panel.index]
+    missing_probes = [p for p in panel_probes if p not in expr_panel.index]
+
+    if len(available_probes) == 0:
+        raise ValueError("None of the selected probes were found in the expression matrix.")
+
+    expr_panel = expr_panel.loc[available_probes]
+
+    x_df = expr_panel[sample_cols].T
+    x_df.index = meta.index
+    x_df = x_df.apply(pd.to_numeric, errors="coerce")
+
+    y = meta["diagnosis_binary"].to_numpy(dtype=int)
+
+    selected_panel_used = selected_panel[
+        selected_panel["Probe ID / feature ID"].astype(str).isin(available_probes)
+    ].copy()
+
+    selected_panel_used["Selected probe panel label"] = "Top 2000 limma-ranked probes"
+    selected_panel_used["Selected probe panel size"] = len(available_probes)
+
+    if "Gene symbol" in selected_panel_used.columns:
+        unique_gene_count = count_unique_gene_symbols(selected_panel_used["Gene symbol"])
+    else:
+        unique_gene_count = np.nan
+
+    selected_panel_used["Approximate unique gene symbols in selected panel"] = unique_gene_count
+
+    print("\n========== FINAL GE BRANCH INPUT ==========")
+    print(f"Measured GE subjects: {len(meta):,}")
+    print(f"CN: {(y == 0).sum():,}")
+    print(f"AD: {(y == 1).sum():,}")
+    print(f"Selected probes requested: {len(panel_probes):,}")
+    print(f"Actual probes used: {len(available_probes):,}")
+    print(f"Missing selected probes: {len(missing_probes):,}")
+    print(f"Approximate unique gene symbols: {unique_gene_count:,}")
+    print("==========================================\n")
+
+    return x_df, y, meta.reset_index(drop=True), selected_panel_used, unique_gene_count
+
+
+# -----------------------------
+# Main training
+# -----------------------------
+
+def main():
+    set_seed(SEED)
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+    print("========== TRAIN FINAL GE BRANCH ==========")
+    print(f"Project root: {PROJECT_ROOT}")
+    print(f"Device: {device}")
+    if torch.cuda.is_available():
+        print(f"GPU: {torch.cuda.get_device_name(0)}")
+    print("==========================================\n")
+
+    x_df, y, meta, selected_panel_used, unique_gene_count = prepare_dataset()
+    n_subjects, input_dim = x_df.shape
+
+    idx = np.arange(n_subjects)
+
+    train_idx, temp_idx = train_test_split(
+        idx,
+        test_size=0.30,
+        random_state=SEED,
+        stratify=y,
+    )
+
+    val_idx, test_idx = train_test_split(
+        temp_idx,
+        test_size=0.50,
+        random_state=SEED,
+        stratify=y[temp_idx],
+    )
+
+    split = np.array([""] * n_subjects, dtype=object)
+    split[train_idx] = "Train"
+    split[val_idx] = "Validation"
+    split[test_idx] = "Test"
+
+    manifest = meta.copy()
+    manifest["split"] = split
+    manifest_path = MANIFEST_DIR / "gene_branch_final_split_seed_42.csv"
+    manifest.to_csv(manifest_path, index=False)
+
+    print("Split counts:")
+    print(manifest.groupby(["split", "diagnosis"]).size().unstack(fill_value=0))
+    print()
+
+    preprocess = Pipeline(
+        steps=[
+            ("imputer", SimpleImputer(strategy="mean")),
+            ("scaler", StandardScaler()),
+        ]
+    )
+
+    x_train = preprocess.fit_transform(x_df.iloc[train_idx])
+    x_val = preprocess.transform(x_df.iloc[val_idx])
+    x_test = preprocess.transform(x_df.iloc[test_idx])
+    x_all = preprocess.transform(x_df)
+
+    y_train = y[train_idx]
+    y_val = y[val_idx]
+    y_test = y[test_idx]
+
+    class_counts = np.bincount(y_train, minlength=2)
+    class_weights = len(y_train) / (2.0 * np.maximum(class_counts, 1))
+    class_weights_t = torch.tensor(class_weights, dtype=torch.float32).to(device)
+
+    model = GeneBranch(input_dim=input_dim, gfv_dim=GFV_DIM, dropout=DROPOUT).to(device)
+
+    criterion = nn.CrossEntropyLoss(
+        weight=class_weights_t,
+        label_smoothing=LABEL_SMOOTHING,
+    )
+
+    optimizer = torch.optim.Adam(
+        model.parameters(),
+        lr=LR,
+        weight_decay=WEIGHT_DECAY,
+    )
+
+    train_loader = DataLoader(
+        TensorDataset(
+            torch.tensor(x_train, dtype=torch.float32),
+            torch.tensor(y_train, dtype=torch.long),
+        ),
+        batch_size=BATCH_SIZE,
+        shuffle=True,
+    )
+
+    best_state = None
+    best_epoch = 0
+    best_score = (-np.inf, -np.inf, np.inf)
+    patience_counter = 0
+    history = []
+
+    for epoch in range(1, MAX_EPOCHS + 1):
+        model.train()
+        train_losses = []
+
+        for xb, yb in train_loader:
+            xb = xb.to(device)
+            yb = yb.to(device)
+
+            optimizer.zero_grad()
+            logits, _ = model(xb)
+            loss = criterion(logits, yb)
+            loss.backward()
+            optimizer.step()
+
+            train_losses.append(loss.item() * len(yb))
+
+        train_eval = evaluate_loss_auc(model, x_train, y_train, criterion, device)
+        val_eval = evaluate_loss_auc(model, x_val, y_val, criterion, device)
+
+        row = {
+            "epoch": epoch,
+            "train_loss": train_eval["loss"],
+            "train_auc": train_eval["auc"],
+            "train_balanced_accuracy": train_eval["balanced_accuracy"],
+            "train_accuracy": train_eval["accuracy"],
+            "train_f1": train_eval["f1"],
+            "validation_loss": val_eval["loss"],
+            "validation_auc": val_eval["auc"],
+            "validation_balanced_accuracy": val_eval["balanced_accuracy"],
+            "validation_accuracy": val_eval["accuracy"],
+            "validation_f1": val_eval["f1"],
+        }
+        history.append(row)
+
+        current_score = (
+            val_eval["auc"] if not np.isnan(val_eval["auc"]) else -np.inf,
+            val_eval["balanced_accuracy"],
+            -val_eval["loss"],
+        )
+
+        if current_score > best_score:
+            best_score = current_score
+            best_epoch = epoch
+            best_state = {
+                "model_state_dict": model.state_dict(),
+                "input_dim": input_dim,
+                "gfv_dim": GFV_DIM,
+                "dropout": DROPOUT,
+                "best_epoch": best_epoch,
+                "seed": SEED,
+            }
+            patience_counter = 0
+        else:
+            patience_counter += 1
+
+        if epoch == 1 or epoch % 10 == 0:
+            print(
+                f"Epoch {epoch:03d} | "
+                f"train loss {train_eval['loss']:.4f} | "
+                f"val loss {val_eval['loss']:.4f} | "
+                f"val AUC {val_eval['auc']:.3f} | "
+                f"val balanced acc {val_eval['balanced_accuracy']:.3f}"
+            )
+
+        if patience_counter >= PATIENCE:
+            print(f"Early stopping at epoch {epoch}. Best epoch: {best_epoch}")
+            break
+
+    if best_state is None:
+        raise RuntimeError("Training failed: no best model state was recorded.")
+
+    model.load_state_dict(best_state["model_state_dict"])
+
+    train_prob, train_pred, _ = predict(model, x_train, device)
+    val_prob, val_pred, _ = predict(model, x_val, device)
+    test_prob, test_pred, _ = predict(model, x_test, device)
+    all_prob, all_pred, all_gfv = predict(model, x_all, device)
+
+    metrics_rows = []
+
+    for split_name, indices, yy, prob, pred in [
+        ("Train", train_idx, y_train, train_prob, train_pred),
+        ("Validation", val_idx, y_val, val_prob, val_pred),
+        ("Test", test_idx, y_test, test_prob, test_pred),
+    ]:
+        m = compute_metrics(yy, prob, pred)
+        m.update(
+            {
+                "Model": "Final GE branch",
+                "Input representation": "Top 2000 limma-ranked probes -> GFV128",
+                "Actual probes used": input_dim,
+                "Approximate unique gene symbols": unique_gene_count,
+                "GFV dimension": GFV_DIM,
+                "Split": split_name,
+                "Best epoch": best_epoch,
+            }
+        )
+        metrics_rows.append(m)
+
+    metrics_df = pd.DataFrame(metrics_rows)
+
+    ordered_cols = [
+        "Model",
+        "Input representation",
+        "Actual probes used",
+        "Approximate unique gene symbols",
+        "GFV dimension",
+        "Split",
+        "Subjects, n",
+        "Best epoch",
+        "Accuracy",
+        "Balanced accuracy",
+        "AUC",
+        "Precision",
+        "Recall / AD sensitivity",
+        "CN specificity",
+        "F1 score",
+        "TN",
+        "FP",
+        "FN",
+        "TP",
+    ]
+
+    metrics_df = metrics_df[ordered_cols]
+
+    predictions_df = meta.copy()
+    predictions_df["split"] = split
+    predictions_df["true_label"] = y
+    predictions_df["predicted_AD_probability"] = all_prob
+    predictions_df["predicted_label"] = all_pred
+    predictions_df["predicted_diagnosis"] = np.where(all_pred == 1, "AD", "CN")
+
+    gfv_cols = [f"GFV{j+1:03d}" for j in range(GFV_DIM)]
+    gfv_df = pd.concat(
+        [
+            meta[["subject_id", "bids_id", "rid", "ge_sample_column", "diagnosis", "diagnosis_binary"]].copy(),
+            pd.DataFrame({"split": split}),
+            pd.DataFrame(all_gfv, columns=gfv_cols),
+        ],
+        axis=1,
+    )
+
+    history_df = pd.DataFrame(history)
+
+    model_path = OUTPUT_DIR / "final_gene_branch_model.pt"
+    scaler_path = OUTPUT_DIR / "final_gene_branch_scaler.pkl"
+    config_path = OUTPUT_DIR / "final_gene_branch_config.json"
+    metrics_path = OUTPUT_DIR / "final_gene_branch_metrics.csv"
+    predictions_path = OUTPUT_DIR / "final_gene_branch_predictions.csv"
+    gfv_path = OUTPUT_DIR / "real_gfv_features_302_subjects.csv"
+    selected_probe_path = OUTPUT_DIR / "final_selected_probe_list.csv"
+    history_path = OUTPUT_DIR / "final_gene_branch_training_history.csv"
+
+    torch.save(best_state, model_path)
+
+    with open(scaler_path, "wb") as f:
+        pickle.dump(preprocess, f)
+
+    config = {
+        "model": "Final GE branch",
+        "seed": SEED,
+        "input_panel": "Top 2000 limma-ranked probes",
+        "actual_probes_used": int(input_dim),
+        "approximate_unique_gene_symbols": int(unique_gene_count) if not pd.isna(unique_gene_count) else None,
+        "gfv_dimension": GFV_DIM,
+        "dropout": DROPOUT,
+        "batch_size": BATCH_SIZE,
+        "max_epochs": MAX_EPOCHS,
+        "early_stopping_patience": PATIENCE,
+        "learning_rate": LR,
+        "weight_decay": WEIGHT_DECAY,
+        "label_smoothing": LABEL_SMOOTHING,
+        "split": "70/15/15 stratified by diagnosis",
+        "best_epoch": int(best_epoch),
+        "subjects_total": int(n_subjects),
+        "train_n": int(len(train_idx)),
+        "validation_n": int(len(val_idx)),
+        "test_n": int(len(test_idx)),
+    }
+
+    with open(config_path, "w") as f:
+        json.dump(config, f, indent=2)
+
+    metrics_df.to_csv(metrics_path, index=False)
+    predictions_df.to_csv(predictions_path, index=False)
+    gfv_df.to_csv(gfv_path, index=False)
+    selected_panel_used.to_csv(selected_probe_path, index=False)
+    history_df.to_csv(history_path, index=False)
+
+    table_s5_path = TABLE_DIR / "Table_S5_Selected_gene_panel.xlsx"
+    table_s6_path = TABLE_DIR / "Table_S6_GE_branch_metrics.xlsx"
+
+    with pd.ExcelWriter(table_s5_path, engine="openpyxl") as writer:
+        selected_panel_used.to_excel(writer, index=False, sheet_name="Selected gene panel")
+
+    with pd.ExcelWriter(table_s6_path, engine="openpyxl") as writer:
+        metrics_df.to_excel(writer, index=False, sheet_name="GE branch metrics")
+
+    style_excel(table_s5_path)
+    style_excel(table_s6_path)
+
+    print("\n========== FINAL GE BRANCH METRICS ==========")
+    print(f"Actual probes used: {input_dim}")
+    print(f"Approximate unique gene symbols: {unique_gene_count}")
+    print(f"GFV dimension: {GFV_DIM}")
+    print(f"Best epoch: {best_epoch}")
+    print()
+    print(metrics_df.to_string(index=False))
+    print("============================================\n")
+
+    print("Saved:")
+    for p in [
+        model_path,
+        scaler_path,
+        config_path,
+        metrics_path,
+        predictions_path,
+        gfv_path,
+        selected_probe_path,
+        history_path,
+        table_s5_path,
+        table_s6_path,
+        manifest_path,
+    ]:
+        print(p)
+
+
+if __name__ == "__main__":
+    main()
+
+============================================================
+6. PYTHON PACKAGE INIT FILES
+============================================================
+
+############################################################
+FILE: src/xigcvae/ablation/__init__.py
+############################################################
+
+############################################################
+FILE: src/xigcvae/data/__init__.py
+############################################################
+
+############################################################
+FILE: src/xigcvae/deg/__init__.py
+############################################################
+
+############################################################
+FILE: src/xigcvae/evaluation/__init__.py
+############################################################
+
+############################################################
+FILE: src/xigcvae/figures/__init__.py
+############################################################
+
+############################################################
+FILE: src/xigcvae/__init__.py
+############################################################
+
+############################################################
+FILE: src/xigcvae/models/__init__.py
+############################################################
+
+############################################################
+FILE: src/xigcvae/tables/__init__.py
+############################################################
+
+############################################################
+FILE: src/xigcvae/training/__init__.py
+############################################################
+
+############################################################
+FILE: src/xigcvae/utils/__init__.py
+############################################################
+
+============================================================
+7. IMPORTANT CSV HEADERS
+============================================================
+
+---- data/Paired_data_metadata.csv columns ----
+subject_id
+bids_id
+rid
+ge_sample_column
+diagnosis
+diagnosis_binary
+age
+sex
+education_years
+apoe4_allele_count
+ge_adni_phase
+ge_visit_code
+adnimerge_visit_code
+adnimerge_exam_date
+selected_mri_image_id
+selected_mri_source_rule
+selected_mri_study_date
+selected_mri_age
+selected_mri_sex
+selected_mri_research_group_label
+selected_mri_abs_distance_days
+selected_mri_within_90_days
+final_pairing_status
+has_measured_ge
+has_mri
+mri_rel_path
+mri_abs_path
+source_group
+ge_column_found
+
+---- data/mri_only_metadata.csv columns ----
+subject_id
+bids_id
+rid
+visit_code
+exam_date
+adnimerge_dx
+baseline_dx
+diagnosis
+diagnosis_binary
+age
+years_from_baseline
+target_visit_age
+adnimerge_imageuid
+selected_source
+selected_image_id
+selected_abs_distance_days
+selected_days_note
+updated_image_id
+updated_note
+has_measured_ge
+has_mri
+mri_rel_path
+mri_abs_path
+source_group
+
+---- outputs/DEG/deg_results_all_genes.csv columns ----
+Gene symbol
+Probe ID / feature ID
+LocusLink
+limma logFC AD vs CN
+Average expression
+Moderated t statistic
+Raw P value
+FDR-adjusted P value
+B statistic
+Rank by raw P value
+Selected for 464-gene panel
+Direction in AD
+Selected for final GE branch panel
+Final GE branch panel
+Final GE branch panel size
+
+---- outputs/gene_branch/gene_panel_sensitivity_summary.csv columns ----
+Gene panel label
+Selection rule
+Actual probes used
+Repeats, n
+Validation accuracy, mean ± SD
+Validation balanced accuracy, mean ± SD
+Validation AUC, mean ± SD
+Validation F1 score, mean ± SD
+Test accuracy, mean ± SD
+Test balanced accuracy, mean ± SD
+Test AUC, mean ± SD
+Test F1 score, mean ± SD
+Selected as final panel
+Selection rationale
+
+---- outputs/gene_branch/selected_gene_panel_from_sensitivity.csv columns ----
+Gene symbol
+Probe ID / feature ID
+LocusLink
+limma logFC AD vs CN
+Average expression
+Moderated t statistic
+Raw P value
+FDR-adjusted P value
+B statistic
+Rank by raw P value
+Selected for 464-gene panel
+Direction in AD
+Final GE branch panel
+Final GE branch panel size
+Final GE branch selection rule

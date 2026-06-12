@@ -1,0 +1,12 @@
+========== CHECK ALIGNED GFV OUTPUTS ==========
+Measured shape: (302, 136)
+Paired MRI shape: (289, 135)
+MRI-only shape: (1206, 139)
+Combined shape: (1508, 139)
+AGFV columns: 128
+Best epoch: 22
+Selection score: 2.061449214395577
+Passed checks: 47
+Failed checks: 0
+
+STATUS: PASS
