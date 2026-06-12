@@ -1,0 +1,23 @@
+{
+  "model": "Final AGFV NN classifier",
+  "input_file": "/N/project/SingleCell_Image/Ronak/Project_folder/outputs/aligned_gfv/aligned_gfv_combined_1508_subjects.csv",
+  "n_subjects": 1508,
+  "n_agfv_features": 128,
+  "seed": 42,
+  "batch_size": 64,
+  "max_epochs": 500,
+  "patience": 70,
+  "best_config": {
+    "name": "mlp_64_do020_wd001_lr0003",
+    "hidden_dims": [
+      64
+    ],
+    "dropout": 0.2,
+    "weight_decay": 0.001,
+    "lr": 0.0003
+  },
+  "best_epoch": 28,
+  "selection_metric": "Validation AUC + Validation balanced accuracy - 0.15*generalization_gap",
+  "selection_score": 1.7426852517807017,
+  "feature_note": "Neural-network comparison classifier trained on AGFV features. Measured-GE subjects use GE-derived AGFV; MRI-only subjects use MRI-derived AGFV. This is a secondary comparison against the logistic final AGFV classifier."
+}

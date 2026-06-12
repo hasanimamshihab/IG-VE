@@ -1,0 +1,24 @@
+========== BUILD MODEL PERFORMANCE COMPARISON ==========
+Reading GE branch classifier: /N/project/SingleCell_Image/Ronak/Project_folder/outputs/gene_branch/final_gene_branch_metrics.csv
+Reading MRI branch classifier: /N/project/SingleCell_Image/Ronak/Project_folder/outputs/mri_branch/final_mri_branch_metrics.csv
+Reading AGFV logistic classifier: /N/project/SingleCell_Image/Ronak/Project_folder/outputs/final_agfv_classifier/final_agfv_classifier_metrics.csv
+Reading AGFV NN classifier: /N/project/SingleCell_Image/Ronak/Project_folder/outputs/final_agfv_nn_classifier/final_agfv_nn_classifier_metrics.csv
+
+                   Model      Split      AUC  Balanced accuracy  Accuracy  AD sensitivity  CN specificity       F1
+    GE branch classifier      Train 1.000000           1.000000  1.000000             NaN        1.000000      NaN
+    GE branch classifier Validation 0.971795           0.894872  0.883721             NaN        0.866667      NaN
+    GE branch classifier       Test 0.957816           0.913151  0.909091             NaN        0.903226      NaN
+   MRI branch classifier      Train 0.996432           0.993293  0.993308             NaN        0.993388      NaN
+   MRI branch classifier Validation 0.926234           0.808894  0.821429             NaN        0.891473      NaN
+   MRI branch classifier       Test 0.907611           0.827935  0.835556             NaN        0.876923      NaN
+AGFV logistic classifier      Train 0.999225           0.997248  0.997167        0.997758        0.996737 0.996641
+AGFV logistic classifier Validation 0.927785           0.844349  0.852679        0.789474        0.899225 0.819672
+AGFV logistic classifier       Test 0.876761           0.826923  0.831111        0.800000        0.853846 0.800000
+      AGFV NN classifier      Train 0.999049           0.997248  0.997167        0.997758        0.996737 0.996641
+      AGFV NN classifier Validation 0.924765           0.851000  0.857143        0.810526        0.891473 0.827957
+      AGFV NN classifier       Test 0.885951           0.828340  0.831111        0.810526        0.846154 0.802083
+
+Saved:
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/tables/main/Table_2_Model_performance_comparison.csv
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/tables/main/Table_2_Model_performance_comparison.xlsx
+STATUS: DONE

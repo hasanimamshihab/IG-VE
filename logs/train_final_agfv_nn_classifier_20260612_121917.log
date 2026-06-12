@@ -1,0 +1,115 @@
+========== TRAIN FINAL AGFV NN CLASSIFIER ==========
+Project root: /N/project/SingleCell_Image/Ronak/Project_folder
+Input AGFV file: /N/project/SingleCell_Image/Ronak/Project_folder/outputs/aligned_gfv/aligned_gfv_combined_1508_subjects.csv
+Output dir: /N/project/SingleCell_Image/Ronak/Project_folder/outputs/final_agfv_nn_classifier
+Device: cuda
+GPU: Tesla V100-PCIE-32GB
+====================================================
+
+Input shape: (1508, 139)
+AGFV columns: 128
+
+Split counts:
+split
+Train         1059
+Test           225
+Validation     224
+Name: count, dtype: int64
+
+Split x diagnosis:
+diagnosis    AD   CN
+split               
+Test         95  130
+Train       446  613
+Validation   95  129
+
+AGFV source x split:
+split                 Test  Train  Validation
+agfv_source                                  
+measured_gfv_encoder    44    215          43
+mri_mfv_encoder        181    844         181
+
+
+==================================================
+Training NN config: {'name': 'mlp_64_do020_wd001_lr0003', 'hidden_dims': (64,), 'dropout': 0.2, 'weight_decay': 0.001, 'lr': 0.0003}
+==================================================
+mlp_64_do020_wd001_lr0003 | Epoch 001 | Train AUC=0.997, Train bacc=0.992 | Val AUC=0.906, Val bacc=0.821 | Gap=0.262 | Score=1.688
+mlp_64_do020_wd001_lr0003 | Epoch 020 | Train AUC=0.999, Train bacc=0.995 | Val AUC=0.927, Val bacc=0.844 | Gap=0.222 | Score=1.739
+mlp_64_do020_wd001_lr0003 | Epoch 040 | Train AUC=0.999, Train bacc=0.997 | Val AUC=0.914, Val bacc=0.852 | Gap=0.230 | Score=1.732
+mlp_64_do020_wd001_lr0003 | Epoch 060 | Train AUC=1.000, Train bacc=0.997 | Val AUC=0.911, Val bacc=0.847 | Gap=0.239 | Score=1.722
+mlp_64_do020_wd001_lr0003 | Epoch 080 | Train AUC=1.000, Train bacc=0.998 | Val AUC=0.894, Val bacc=0.842 | Gap=0.262 | Score=1.697
+mlp_64_do020_wd001_lr0003 early stopping at epoch 98. Best epoch: 28
+
+==================================================
+Training NN config: {'name': 'mlp_64_do035_wd002_lr0003', 'hidden_dims': (64,), 'dropout': 0.35, 'weight_decay': 0.002, 'lr': 0.0003}
+==================================================
+mlp_64_do035_wd002_lr0003 | Epoch 001 | Train AUC=0.997, Train bacc=0.992 | Val AUC=0.906, Val bacc=0.821 | Gap=0.262 | Score=1.688
+mlp_64_do035_wd002_lr0003 | Epoch 020 | Train AUC=0.999, Train bacc=0.995 | Val AUC=0.928, Val bacc=0.839 | Gap=0.227 | Score=1.733
+mlp_64_do035_wd002_lr0003 | Epoch 040 | Train AUC=0.999, Train bacc=0.997 | Val AUC=0.913, Val bacc=0.842 | Gap=0.242 | Score=1.719
+mlp_64_do035_wd002_lr0003 | Epoch 060 | Train AUC=1.000, Train bacc=0.997 | Val AUC=0.909, Val bacc=0.852 | Gap=0.236 | Score=1.726
+mlp_64_do035_wd002_lr0003 | Epoch 080 | Train AUC=1.000, Train bacc=0.997 | Val AUC=0.907, Val bacc=0.842 | Gap=0.249 | Score=1.711
+mlp_64_do035_wd002_lr0003 | Epoch 100 | Train AUC=1.000, Train bacc=0.998 | Val AUC=0.904, Val bacc=0.842 | Gap=0.252 | Score=1.709
+mlp_64_do035_wd002_lr0003 early stopping at epoch 106. Best epoch: 36
+
+==================================================
+Training NN config: {'name': 'mlp_128_do035_wd002_lr0002', 'hidden_dims': (128,), 'dropout': 0.35, 'weight_decay': 0.002, 'lr': 0.0002}
+==================================================
+mlp_128_do035_wd002_lr0002 | Epoch 001 | Train AUC=0.997, Train bacc=0.995 | Val AUC=0.871, Val bacc=0.825 | Gap=0.296 | Score=1.651
+mlp_128_do035_wd002_lr0002 | Epoch 020 | Train AUC=0.999, Train bacc=0.995 | Val AUC=0.911, Val bacc=0.829 | Gap=0.254 | Score=1.701
+mlp_128_do035_wd002_lr0002 | Epoch 040 | Train AUC=0.999, Train bacc=0.997 | Val AUC=0.917, Val bacc=0.846 | Gap=0.233 | Score=1.727
+mlp_128_do035_wd002_lr0002 | Epoch 060 | Train AUC=0.999, Train bacc=0.997 | Val AUC=0.907, Val bacc=0.847 | Gap=0.242 | Score=1.718
+mlp_128_do035_wd002_lr0002 | Epoch 080 | Train AUC=0.999, Train bacc=0.998 | Val AUC=0.908, Val bacc=0.852 | Gap=0.238 | Score=1.724
+mlp_128_do035_wd002_lr0002 | Epoch 100 | Train AUC=1.000, Train bacc=0.998 | Val AUC=0.903, Val bacc=0.847 | Gap=0.248 | Score=1.713
+mlp_128_do035_wd002_lr0002 early stopping at epoch 112. Best epoch: 42
+
+==================================================
+Training NN config: {'name': 'mlp_64_32_do035_wd002_lr0003', 'hidden_dims': (64, 32), 'dropout': 0.35, 'weight_decay': 0.002, 'lr': 0.0003}
+==================================================
+mlp_64_32_do035_wd002_lr0003 | Epoch 001 | Train AUC=0.997, Train bacc=0.995 | Val AUC=0.887, Val bacc=0.821 | Gap=0.285 | Score=1.665
+mlp_64_32_do035_wd002_lr0003 | Epoch 020 | Train AUC=0.997, Train bacc=0.996 | Val AUC=0.910, Val bacc=0.829 | Gap=0.254 | Score=1.701
+mlp_64_32_do035_wd002_lr0003 | Epoch 040 | Train AUC=0.997, Train bacc=0.998 | Val AUC=0.891, Val bacc=0.847 | Gap=0.257 | Score=1.700
+mlp_64_32_do035_wd002_lr0003 | Epoch 060 | Train AUC=0.997, Train bacc=0.998 | Val AUC=0.870, Val bacc=0.852 | Gap=0.273 | Score=1.681
+mlp_64_32_do035_wd002_lr0003 | Epoch 080 | Train AUC=0.999, Train bacc=0.998 | Val AUC=0.885, Val bacc=0.852 | Gap=0.260 | Score=1.699
+mlp_64_32_do035_wd002_lr0003 | Epoch 100 | Train AUC=0.998, Train bacc=0.998 | Val AUC=0.874, Val bacc=0.852 | Gap=0.270 | Score=1.685
+mlp_64_32_do035_wd002_lr0003 early stopping at epoch 100. Best epoch: 30
+
+==================================================
+Training NN config: {'name': 'mlp_128_64_do040_wd003_lr0002', 'hidden_dims': (128, 64), 'dropout': 0.4, 'weight_decay': 0.003, 'lr': 0.0002}
+==================================================
+mlp_128_64_do040_wd003_lr0002 | Epoch 001 | Train AUC=0.997, Train bacc=0.995 | Val AUC=0.891, Val bacc=0.825 | Gap=0.276 | Score=1.675
+mlp_128_64_do040_wd003_lr0002 | Epoch 020 | Train AUC=0.998, Train bacc=0.995 | Val AUC=0.915, Val bacc=0.829 | Gap=0.249 | Score=1.706
+mlp_128_64_do040_wd003_lr0002 | Epoch 040 | Train AUC=0.998, Train bacc=0.998 | Val AUC=0.891, Val bacc=0.852 | Gap=0.253 | Score=1.705
+mlp_128_64_do040_wd003_lr0002 | Epoch 060 | Train AUC=0.999, Train bacc=0.998 | Val AUC=0.897, Val bacc=0.852 | Gap=0.247 | Score=1.713
+mlp_128_64_do040_wd003_lr0002 | Epoch 080 | Train AUC=0.999, Train bacc=0.998 | Val AUC=0.876, Val bacc=0.849 | Gap=0.273 | Score=1.684
+mlp_128_64_do040_wd003_lr0002 early stopping at epoch 93. Best epoch: 23
+
+========== BEST FINAL AGFV NN CLASSIFIER ==========
+Best config: {'name': 'mlp_64_do020_wd001_lr0003', 'hidden_dims': (64,), 'dropout': 0.2, 'weight_decay': 0.001, 'lr': 0.0003}
+Best epoch: 28
+Best validation selection score: 1.7426852517807017
+===================================================
+
+========== FINAL AGFV NN CLASSIFIER METRICS ==========
+                   Model      Split             Subgroup  Subjects, n  AD, n  CN, n      AUC  Accuracy  Balanced accuracy  Precision  AD sensitivity  CN specificity       F1  TN  FP  FN  TP
+Final AGFV NN classifier      Train              Overall         1059    446    613 0.999049  0.997167           0.997248   0.995526        0.997758        0.996737 0.996641 611   2   1 445
+Final AGFV NN classifier      Train measured_gfv_encoder          215     64    151 1.000000  1.000000           1.000000   1.000000        1.000000        1.000000 1.000000 151   0   0  64
+Final AGFV NN classifier      Train      mri_mfv_encoder          844    382    462 0.999150  0.996445           0.996527   0.994778        0.997382        0.995671 0.996078 460   2   1 381
+Final AGFV NN classifier Validation              Overall          224     95    129 0.924765  0.857143           0.851000   0.846154        0.810526        0.891473 0.827957 115  14  18  77
+Final AGFV NN classifier Validation measured_gfv_encoder           43     13     30 0.979487  0.906977           0.933333   0.764706        1.000000        0.866667 0.866667  26   4   0  13
+Final AGFV NN classifier Validation      mri_mfv_encoder          181     82     99 0.930771  0.845304           0.839739   0.864865        0.780488        0.898990 0.820513  89  10  18  64
+Final AGFV NN classifier       Test              Overall          225     95    130 0.885951  0.831111           0.828340   0.793814        0.810526        0.846154 0.802083 110  20  18  77
+Final AGFV NN classifier       Test measured_gfv_encoder           44     13     31 0.975186  0.886364           0.897022   0.750000        0.923077        0.870968 0.827586  27   4   1  12
+Final AGFV NN classifier       Test      mri_mfv_encoder          181     82     99 0.881559  0.817680           0.815533   0.802469        0.792683        0.838384 0.797546  83  16  17  65
+======================================================
+
+Saved:
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/final_agfv_nn_classifier/final_agfv_nn_classifier_model.pt
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/final_agfv_nn_classifier/final_agfv_nn_classifier_scaler.pkl
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/final_agfv_nn_classifier/final_agfv_nn_classifier_config.json
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/final_agfv_nn_classifier/final_agfv_nn_classifier_metrics.csv
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/final_agfv_nn_classifier/final_agfv_nn_classifier_all_config_metrics.csv
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/final_agfv_nn_classifier/final_agfv_nn_classifier_training_history.csv
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/final_agfv_nn_classifier/final_agfv_nn_classifier_predictions.csv
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/tables/supplementary/Table_S17_Final_AGFV_NN_classifier_metrics.xlsx
+
+STATUS: DONE
