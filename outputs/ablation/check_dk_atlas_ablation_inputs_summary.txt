@@ -1,0 +1,280 @@
+========== CHECK DK ATLAS ABLATION INPUTS ==========
+Project root: /N/project/SingleCell_Image/Ronak/Project_folder
+DK atlas dir: /N/project/ADRD/imagingprocess/ROI/DesikanKilliany
+
+FOUND: /N/project/ADRD/imagingprocess/ROI/DesikanKilliany
+FOUND: /N/project/ADRD/imagingprocess/ROI/DesikanKilliany/desikanKillianyMNI152_2mm.nii.gz
+FOUND: /N/project/ADRD/imagingprocess/ROI/DesikanKilliany/DesikanKilliany_ROI.csv
+FOUND: /N/project/ADRD/imagingprocess/ROI/DesikanKilliany/DesikanKilliany_Index.txt
+FOUND: /N/project/ADRD/imagingprocess/ROI/DesikanKilliany/desikanKillianyNodeNames.txt
+FOUND: /N/project/ADRD/imagingprocess/ROI/DesikanKilliany/desikanKillianyNodeIndex.1D
+FOUND: /N/project/SingleCell_Image/Ronak/Project_folder/outputs/mri_branch/mfv_features_all_1495_mri_subjects.csv
+FOUND: /N/project/SingleCell_Image/Ronak/Project_folder/outputs/aligned_gfv/aligned_gfv_combined_1508_subjects.csv
+
+Atlas shape: (91, 109, 91)
+Atlas affine:
+[[  -2.   -0.   -0.   90.]
+ [  -0.    2.   -0. -126.]
+ [   0.    0.    2.  -72.]
+ [   0.    0.    0.    1.]]
+Atlas voxel sizes: (2.0, 2.0, 2.0)
+Number of nonzero labels: 112
+First 30 labels: [2, 4, 5, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 24, 26, 28, 30, 31, 41, 43, 44, 46, 47, 49, 50, 51, 52, 53, 54]
+Last 30 labels: [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035]
+
+ROI CSV shape: (112, 23)
+ROI CSV columns: ['Index', 'ROI', 'aparc_aseg_region.names.short', 'BraakStage', 'PVC_mat_idx', 'Label.No.', 'aparc_aseg_SC_ID', 'aparc_aseg_RSN.7', 'aparc_aseg_RSN.17', 'centroid.X', 'centroid.Y', 'centroid.Z', 'aparc_aseg_region.short', 'aparc_aseg_region.long', 'subset_short', 'subset_long', 'hemisphere', 'acronyms', 'subcortex', 'RSN', 'MNI.x', 'MNI.y', 'MNI.z']
+ROI CSV preview:
+ Index                          ROI aparc_aseg_region.names.short  BraakStage  PVC_mat_idx  Label.No.  aparc_aseg_SC_ID  aparc_aseg_RSN.7  aparc_aseg_RSN.17  centroid.X  centroid.Y  centroid.Z aparc_aseg_region.short aparc_aseg_region.long  subset_short  subset_long hemisphere acronyms  subcortex         RSN      MNI.x      MNI.y      MNI.z
+     2   Left-Cerebral-White-Matter                           NaN         NaN          NaN        NaN               NaN               NaN                NaN         NaN         NaN         NaN                     NaN                    NaN           NaN          NaN        NaN      NaN        NaN         NaN        NaN        NaN        NaN
+     4       Left-Lateral-Ventricle                           NaN         NaN          NaN        NaN               NaN               NaN                NaN         NaN         NaN         NaN                     NaN                    NaN           NaN          NaN        NaN      NaN        NaN         NaN        NaN        NaN        NaN
+     5            Left-Inf-Lat-Vent                           NaN         NaN          NaN        NaN               NaN               NaN                NaN         NaN         NaN         NaN                     NaN                    NaN           NaN          NaN        NaN      NaN        NaN         NaN        NaN        NaN        NaN
+     7 Left-Cerebellum-White-Matter                           NaN         NaN          NaN        NaN               NaN               NaN                NaN         NaN         NaN         NaN                     NaN                    NaN           NaN          NaN        NaN      NaN        NaN         NaN        NaN        NaN        NaN
+     8       Left-Cerebellum-Cortex             Cerebellum-Cortex         NaN          NaN        8.0              35.0               9.0               19.0      182.40      155.06       84.90                     NaN                    NaN           NaN          NaN          L Cerebell        NaN  Cerebellum -25.289668 -62.601210 -35.091580
+    10         Left-Thalamus-Proper             0-Thalamus-Proper         NaN         14.0       10.0              36.0               8.0               18.0      142.04      142.02      128.21                     NaN                    NaN           NaN          NaN          L       Th        1.0 Subcortical -12.604356 -19.633359   4.650912
+    11                 Left-Caudate                     0-Caudate         NaN         35.0       11.0              37.0               8.0               18.0      138.30      142.90      154.66                     NaN                    NaN           NaN          NaN          L      Cau        1.0 Subcortical -13.460420   6.607686   8.333690
+    12                 Left-Putamen                     0-Putamen         NaN         36.0       12.0              38.0               8.0               18.0      149.01      155.61      148.06                     NaN                    NaN           NaN          NaN          L      Put        1.0 Subcortical -25.824708   0.059826  -2.212447
+    13                Left-Pallidum                    0-Pallidum         NaN         41.0       13.0              39.0               8.0               18.0      150.14      149.45      144.09                     NaN                    NaN           NaN          NaN          L     Pall        1.0 Subcortical -19.832260  -3.878811  -3.325158
+    14                3rd-Ventricle                           NaN         NaN          NaN        NaN               NaN               NaN                NaN         NaN         NaN         NaN                     NaN                    NaN           NaN          NaN        NaN      NaN        NaN         NaN        NaN        NaN        NaN
+    15                4th-Ventricle                           NaN         NaN          NaN        NaN               NaN               NaN                NaN         NaN         NaN         NaN                     NaN                    NaN           NaN          NaN        NaN      NaN        NaN         NaN        NaN        NaN        NaN
+    16                   Brain-Stem                           NaN         NaN          NaN        NaN               NaN               NaN                NaN         NaN         NaN         NaN                     NaN                    NaN           NaN          NaN        NaN      NaN        NaN         NaN        NaN        NaN        NaN
+    17             Left-Hippocampus                 0-Hippocampus         2.0          3.0       17.0              40.0               8.0               18.0      160.42      156.21      124.20        Left-Hippocampus       Left-Hippocampus           1.0          1.0          L     Hipp        1.0 Subcortical -26.408388 -23.611680 -13.447874
+    18                Left-Amygdala                    0-Amygdala         3.0          8.0       18.0              41.0               8.0               18.0      167.88      152.53      144.12           Left-Amygdala          Left-Amygdala           1.0          1.0          L      Amy        1.0 Subcortical -22.828484  -3.849048 -20.793736
+    24                          CSF                           NaN         NaN          NaN        NaN               NaN               NaN                NaN         NaN         NaN         NaN                     NaN                    NaN           NaN          NaN        NaN      NaN        NaN         NaN        NaN        NaN        NaN
+    26          Left-Accumbens-area              0-Accumbens-area         NaN         45.0       26.0              42.0               8.0               18.0      155.96      138.62      158.60                     NaN                    NaN           NaN          NaN          L     Accu        1.0 Subcortical  -9.296836  10.516560  -9.056112
+    28               Left-VentralDC                           NaN         NaN          NaN        NaN               NaN               NaN                NaN         NaN         NaN         NaN                     NaN                    NaN           NaN          NaN        NaN      NaN        NaN         NaN        NaN        NaN        NaN
+    30                  Left-vessel                           NaN         NaN          NaN        NaN               NaN               NaN                NaN         NaN         NaN         NaN                     NaN                    NaN           NaN          NaN        NaN      NaN        NaN         NaN        NaN        NaN        NaN
+    31          Left-choroid-plexus                           NaN         NaN          NaN        NaN               NaN               NaN                NaN         NaN         NaN         NaN                     NaN                    NaN           NaN          NaN        NaN      NaN        NaN         NaN        NaN        NaN        NaN
+    41  Right-Cerebral-White-Matter                           NaN         NaN          NaN        NaN               NaN               NaN                NaN         NaN         NaN         NaN                     NaN                    NaN           NaN          NaN        NaN      NaN        NaN         NaN        NaN        NaN        NaN
+
+Index TXT preview:
+2
+4
+5
+7
+8
+10
+11
+12
+13
+14
+15
+16
+17
+18
+24
+26
+28
+30
+31
+41
+
+Node names preview:
+Left-Cerebral-White-Matter
+Left-Lateral-Ventricle
+Left-Inf-Lat-Vent
+Left-Cerebellum-White-Matter
+Left-Cerebellum-Cortex
+Left-Thalamus-Proper
+Left-Caudate
+Left-Putamen
+Left-Pallidum
+3rd-Ventricle
+4th-Ventricle
+Brain-Stem
+Left-Hippocampus
+Left-Amygdala
+CSF
+Left-Accumbens-area
+Left-VentralDC
+Left-vessel
+Left-choroid-plexus
+Right-Cerebral-White-Matter
+
+Mask files found: 113
+mask10.nii.gz
+mask1000.nii.gz
+mask1001.nii.gz
+mask1002.nii.gz
+mask1003.nii.gz
+mask1005.nii.gz
+mask1006.nii.gz
+mask1007.nii.gz
+mask1008.nii.gz
+mask1009.nii.gz
+mask1010.nii.gz
+mask1011.nii.gz
+mask1012.nii.gz
+mask1013.nii.gz
+mask1014.nii.gz
+mask1015.nii.gz
+mask1016.nii.gz
+mask1017.nii.gz
+mask1018.nii.gz
+mask1019.nii.gz
+mask1020.nii.gz
+mask1021.nii.gz
+mask1022.nii.gz
+mask1023.nii.gz
+mask1024.nii.gz
+mask1025.nii.gz
+mask1026.nii.gz
+mask1027.nii.gz
+mask1028.nii.gz
+mask1029.nii.gz
+mask1030.nii.gz
+mask1031.nii.gz
+mask1032.nii.gz
+mask1033.nii.gz
+mask1034.nii.gz
+mask1035.nii.gz
+mask11.nii.gz
+mask12.nii.gz
+mask13.nii.gz
+mask14.nii.gz
+mask15.nii.gz
+mask16.nii.gz
+mask17.nii.gz
+mask18.nii.gz
+mask2.nii.gz
+mask2000.nii.gz
+mask2001.nii.gz
+mask2002.nii.gz
+mask2003.nii.gz
+mask2005.nii.gz
+Sample MRI image checks:
+
+Subject: 002_S_0295
+Path: /N/project/SingleCell_Image/Ronak/Project_folder/data/only_MRI/sub-002S0295.nii.gz
+Exists: True
+MRI shape: (97, 115, 97)
+MRI voxel sizes: (2.0, 2.0, 2.0)
+MRI affine:
+[[   2.     0.     0.   -96.5]
+ [   0.     2.     0.  -132.5]
+ [   0.     0.     2.   -78.5]
+ [   0.     0.     0.     1. ]]
+Same 3D shape as DK atlas: False
+Affine close to DK atlas: False
+
+Subject: 002_S_4799
+Path: /N/project/SingleCell_Image/Ronak/Project_folder/data/only_MRI/sub-002S4799.nii.gz
+Exists: True
+MRI shape: (97, 115, 97)
+MRI voxel sizes: (2.0, 2.0, 2.0)
+MRI affine:
+[[   2.     0.     0.   -96.5]
+ [   0.     2.     0.  -132.5]
+ [   0.     0.     2.   -78.5]
+ [   0.     0.     0.     1. ]]
+Same 3D shape as DK atlas: False
+Affine close to DK atlas: False
+
+Subject: 002_S_5256
+Path: /N/project/SingleCell_Image/Ronak/Project_folder/data/only_MRI/sub-002S5256.nii.gz
+Exists: True
+MRI shape: (97, 115, 97)
+MRI voxel sizes: (2.0, 2.0, 2.0)
+MRI affine:
+[[   2.     0.     0.   -96.5]
+ [   0.     2.     0.  -132.5]
+ [   0.     0.     2.   -78.5]
+ [   0.     0.     0.     1. ]]
+Same 3D shape as DK atlas: False
+Affine close to DK atlas: False
+
+Subject: 002_S_6007
+Path: /N/project/SingleCell_Image/Ronak/Project_folder/data/only_MRI/sub-002S6007.nii.gz
+Exists: True
+MRI shape: (97, 115, 97)
+MRI voxel sizes: (2.0, 2.0, 2.0)
+MRI affine:
+[[   2.     0.     0.   -96.5]
+ [   0.     2.     0.  -132.5]
+ [   0.     0.     2.   -78.5]
+ [   0.     0.     0.     1. ]]
+Same 3D shape as DK atlas: False
+Affine close to DK atlas: False
+
+Subject: 002_S_6009
+Path: /N/project/SingleCell_Image/Ronak/Project_folder/data/only_MRI/sub-002S6009.nii.gz
+Exists: True
+MRI shape: (97, 115, 97)
+MRI voxel sizes: (2.0, 2.0, 2.0)
+MRI affine:
+[[   2.     0.     0.   -96.5]
+ [   0.     2.     0.  -132.5]
+ [   0.     0.     2.   -78.5]
+ [   0.     0.     0.     1. ]]
+Same 3D shape as DK atlas: False
+Affine close to DK atlas: False
+
+Subject: 002_S_6053
+Path: /N/project/SingleCell_Image/Ronak/Project_folder/data/only_MRI/sub-002S6053.nii.gz
+Exists: True
+MRI shape: (97, 115, 97)
+MRI voxel sizes: (2.0, 2.0, 2.0)
+MRI affine:
+[[   2.     0.     0.   -96.5]
+ [   0.     2.     0.  -132.5]
+ [   0.     0.     2.   -78.5]
+ [   0.     0.     0.     1. ]]
+Same 3D shape as DK atlas: False
+Affine close to DK atlas: False
+
+Subject: 003_S_1021
+Path: /N/project/SingleCell_Image/Ronak/Project_folder/data/only_MRI/sub-003S1021.nii.gz
+Exists: True
+MRI shape: (97, 115, 97)
+MRI voxel sizes: (2.0, 2.0, 2.0)
+MRI affine:
+[[   2.     0.     0.   -96.5]
+ [   0.     2.     0.  -132.5]
+ [   0.     0.     2.   -78.5]
+ [   0.     0.     0.     1. ]]
+Same 3D shape as DK atlas: False
+Affine close to DK atlas: False
+
+Subject: 003_S_5154
+Path: /N/project/SingleCell_Image/Ronak/Project_folder/data/only_MRI/sub-003S5154.nii.gz
+Exists: True
+MRI shape: (97, 115, 97)
+MRI voxel sizes: (2.0, 2.0, 2.0)
+MRI affine:
+[[   2.     0.     0.   -96.5]
+ [   0.     2.     0.  -132.5]
+ [   0.     0.     2.   -78.5]
+ [   0.     0.     0.     1. ]]
+Same 3D shape as DK atlas: False
+Affine close to DK atlas: False
+
+Subject: 003_S_6256
+Path: /N/project/SingleCell_Image/Ronak/Project_folder/data/only_MRI/sub-003S6256.nii.gz
+Exists: True
+MRI shape: (97, 115, 97)
+MRI voxel sizes: (2.0, 2.0, 2.0)
+MRI affine:
+[[   2.     0.     0.   -96.5]
+ [   0.     2.     0.  -132.5]
+ [   0.     0.     2.   -78.5]
+ [   0.     0.     0.     1. ]]
+Same 3D shape as DK atlas: False
+Affine close to DK atlas: False
+
+Subject: 003_S_6915
+Path: /N/project/SingleCell_Image/Ronak/Project_folder/data/only_MRI/sub-003S6915.nii.gz
+Exists: True
+MRI shape: (97, 115, 97)
+MRI voxel sizes: (2.0, 2.0, 2.0)
+MRI affine:
+[[   2.     0.     0.   -96.5]
+ [   0.     2.     0.  -132.5]
+ [   0.     0.     2.   -78.5]
+ [   0.     0.     0.     1. ]]
+Same 3D shape as DK atlas: False
+Affine close to DK atlas: False
+
+Interpretation:
+If MRI images and DK atlas are in the same MNI 2mm space, atlas-based region ablation can be performed directly. If shapes/affines differ, the DK atlas should be resampled or resized with nearest-neighbor interpolation to the MRI/model input space.
+
+STATUS: DONE

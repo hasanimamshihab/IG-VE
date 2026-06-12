@@ -1,0 +1,22 @@
+========== CHECK ABLATION OUTPUTS ==========
+
+Output shapes:
+                          Output                                                                                                                   Path   Rows  Columns
+               GE probe ablation                         /N/project/SingleCell_Image/Ronak/Project_folder/outputs/ablation/ge_branch_probe_ablation.csv   6000       32
+                GE gene ablation                          /N/project/SingleCell_Image/Ronak/Project_folder/outputs/ablation/ge_branch_gene_ablation.csv   1539       10
+        AGFV NN feature ablation                         /N/project/SingleCell_Image/Ronak/Project_folder/outputs/ablation/agfv_nn_feature_ablation.csv    640       18
+       AGFV gene association top                        /N/project/SingleCell_Image/Ronak/Project_folder/outputs/ablation/agfv_gene_association_top.csv   2500       15
+AGFV gene association gene level                 /N/project/SingleCell_Image/Ronak/Project_folder/outputs/ablation/agfv_gene_association_gene_level.csv  38475       10
+      DK subject-region ablation            /N/project/SingleCell_Image/Ronak/Project_folder/outputs/ablation/mri_dk_region_ablation_subject_region.csv  40182       26
+        DK region-level ablation              /N/project/SingleCell_Image/Ronak/Project_folder/outputs/ablation/mri_dk_region_ablation_region_level.csv    333       34
+ DK region-AGFV feature ablation /N/project/SingleCell_Image/Ronak/Project_folder/outputs/ablation/mri_dk_region_ablation_region_agfv_feature_level.csv  14208       13
+    AGFV-gene all128 probe level         /N/project/SingleCell_Image/Ronak/Project_folder/outputs/ablation/agfv_gene_association_all128_probe_level.csv 256000       18
+     AGFV-gene all128 gene level          /N/project/SingleCell_Image/Ronak/Project_folder/outputs/ablation/agfv_gene_association_all128_gene_level.csv 196992       16
+  DK region-AGFV-gene bridge all                   /N/project/SingleCell_Image/Ronak/Project_folder/outputs/ablation/dk_region_agfv_gene_bridge_all.csv 710400       38
+  DK region-AGFV-gene bridge top                   /N/project/SingleCell_Image/Ronak/Project_folder/outputs/ablation/dk_region_agfv_gene_bridge_top.csv   5000       38
+          DK region-gene summary             /N/project/SingleCell_Image/Ronak/Project_folder/outputs/ablation/dk_region_gene_bridge_region_summary.csv    111       13
+
+Passed checks: 42
+Failed checks: 0
+
+STATUS: PASS

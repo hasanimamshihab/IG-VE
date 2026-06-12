@@ -1,0 +1,60 @@
+========== GE BRANCH PROBE/GENE ABLATION ==========
+Subjects: 302
+Features/probes: 2000
+
+Baseline metrics:
+Validation: AUC=0.971795, Balanced accuracy=0.894872, Accuracy=0.883721
+Test: AUC=0.957816, Balanced accuracy=0.913151, Accuracy=0.909091
+Heldout: AUC=0.965322, Balanced accuracy=0.904161, Accuracy=0.896552
+
+Top 20 heldout probes by ablation score:
+Probe ID / feature ID Gene symbol  Delta AUC  Delta balanced accuracy  Mean absolute probability change  Probe ablation score
+        11745608_a_at        WDR1   0.003783                      0.0                          0.002563              0.004039
+        11737559_a_at       AJAP1   0.003153                      0.0                          0.004588              0.003611
+        11745800_a_at      CCP110   0.003153                      0.0                          0.004407              0.003593
+          11726445_at       KCNK3   0.003153                      0.0                          0.003020              0.003455
+        11720022_a_at         MME   0.003153                      0.0                          0.002980              0.003451
+          11761837_at     RALGPS1   0.002522                      0.0                          0.004676              0.002990
+        11748394_a_at        FMO1   0.002522                      0.0                          0.003228              0.002845
+        11735480_a_at    FAM160A1   0.002522                      0.0                          0.003208              0.002843
+          11733939_at       RPEL1   0.002522                      0.0                          0.002842              0.002806
+          11725555_at     TMEM133   0.002522                      0.0                          0.002128              0.002735
+          11742227_at      CLDN22   0.002522                      0.0                          0.001033              0.002625
+        11732168_x_at       STAG3   0.001892                      0.0                          0.004845              0.002376
+        11729909_a_at       IQCA1   0.001892                      0.0                          0.004782              0.002370
+        11738522_a_at       TRPV1   0.001892                      0.0                          0.004371              0.002329
+          11740780_at       FOXD2   0.001892                      0.0                          0.004213              0.002313
+          11725212_at      PLCXD1   0.001892                      0.0                          0.003693              0.002261
+        11757174_x_at     SNORA5B   0.001892                      0.0                          0.003424              0.002234
+          11738977_at   KRTAP23-1   0.001892                      0.0                          0.003381              0.002230
+          11760781_at       DCAF5   0.001892                      0.0                          0.003195              0.002211
+        11730698_a_at       FOXR1   0.001892                      0.0                          0.003190              0.002211
+
+Top 20 heldout genes by ablation score:
+     Gene  Probe_count  Max_delta_AUC  Max_delta_balanced_accuracy  Max_probability_change  Max_probe_ablation_score
+     WDR1            1       0.003783                          0.0                0.002563                  0.004039
+    AJAP1            1       0.003153                          0.0                0.004588                  0.003611
+   CCP110            1       0.003153                          0.0                0.004407                  0.003593
+    KCNK3            1       0.003153                          0.0                0.003020                  0.003455
+      MME            5       0.003153                          0.0                0.002980                  0.003451
+  RALGPS1            1       0.002522                          0.0                0.004676                  0.002990
+     FMO1            1       0.002522                          0.0                0.003228                  0.002845
+ FAM160A1            1       0.002522                          0.0                0.003208                  0.002843
+    RPEL1            2       0.002522                          0.0                0.003131                  0.002806
+  TMEM133            1       0.002522                          0.0                0.002128                  0.002735
+   CLDN22            1       0.002522                          0.0                0.001033                  0.002625
+    STAG3            1       0.001892                          0.0                0.004845                  0.002376
+    IQCA1            1       0.001892                          0.0                0.004782                  0.002370
+    TRPV1            1       0.001892                          0.0                0.004371                  0.002329
+    FOXD2            1       0.001892                          0.0                0.004213                  0.002313
+   PLCXD1            1       0.001892                          0.0                0.003693                  0.002261
+  SNORA5B            1       0.001892                          0.0                0.003424                  0.002234
+KRTAP23-1            1       0.001892                          0.0                0.003381                  0.002230
+    DCAF5            1       0.001892                          0.0                0.003195                  0.002211
+    FOXR1            1       0.001892                          0.0                0.003190                  0.002211
+
+Saved:
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/ablation/ge_branch_probe_ablation.csv
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/ablation/ge_branch_gene_ablation.csv
+/N/project/SingleCell_Image/Ronak/Project_folder/outputs/tables/supplementary/Table_S18_GE_branch_probe_gene_ablation.xlsx
+STATUS: DONE

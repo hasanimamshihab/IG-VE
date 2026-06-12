@@ -19,3 +19,11 @@ Thumbs.db
 # Local installed R libraries, not needed in GitHub
 R_libs/
 logs/*archive*.log
+
+# Large ablation outputs kept on HPC only
+outputs/ablation/dk_region_agfv_gene_bridge_all.csv
+outputs/ablation/agfv_gene_association_all128_probe_level.csv
+outputs/ablation/agfv_gene_association_all128_gene_level.csv
+outputs/ablation/agfv_gene_association_all.csv
+outputs/ablation/agfv_gene_association_gene_level.csv
+outputs/ablation/mri_dk_region_ablation_subject_region.csv
