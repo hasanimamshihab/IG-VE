@@ -1,0 +1,16 @@
+========== CHECK FINAL AGFV CLASSIFIER OUTPUTS ==========
+Predictions shape: (1508, 7)
+Metrics shape: (9, 17)
+All model metrics shape: (11, 6)
+Best C: 0.3
+
+Overall metrics:
+                         Model      Split Subgroup  Subjects, n  AD, n  CN, n      AUC  Accuracy  Balanced accuracy  Precision  AD sensitivity  CN specificity       F1  TN  FP  FN  TP
+Final AGFV logistic classifier      Train  Overall         1059    446    613 0.999225  0.997167           0.997248   0.995526        0.997758        0.996737 0.996641 611   2   1 445
+Final AGFV logistic classifier Validation  Overall          224     95    129 0.927785  0.852679           0.844349   0.852273        0.789474        0.899225 0.819672 116  13  20  75
+Final AGFV logistic classifier       Test  Overall          225     95    130 0.876761  0.831111           0.826923   0.800000        0.800000        0.853846 0.800000 111  19  19  76
+
+Passed checks: 25
+Failed checks: 0
+
+STATUS: PASS

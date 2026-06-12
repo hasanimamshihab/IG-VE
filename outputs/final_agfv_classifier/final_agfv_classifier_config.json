@@ -1,0 +1,16 @@
+{
+  "model": "Final AGFV logistic classifier",
+  "input_file": "/N/project/SingleCell_Image/Ronak/Project_folder/outputs/aligned_gfv/aligned_gfv_combined_1508_subjects.csv",
+  "n_subjects": 1508,
+  "n_agfv_features": 128,
+  "seed": 42,
+  "splits": {
+    "Train": 1059,
+    "Validation": 224,
+    "Test": 225
+  },
+  "best_C": 0.3,
+  "selection_metric": "Validation AUC + Validation balanced accuracy - 1e-5*C",
+  "selection_score": 1.7721308229294166,
+  "feature_note": "Classifier trained on AGFV features for all subjects. Measured-GE subjects use GE-derived AGFV; MRI-only subjects use MRI-derived AGFV. Original GFV and MFV are not mixed directly in the classifier."
+}
